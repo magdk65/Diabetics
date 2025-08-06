@@ -1,0 +1,114 @@
+.pnp-meal-section-create{
+    display: flex;
+    flex-direction: column;
+}
+.pnp-meal-header-create{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.pnp-meal-header-create  img{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 30%;
+    padding: 1%;
+}
+.pnp-meal-header-create h3{
+    display: flex;
+    flex-direction: column-reverse;
+}
+.pnp-add-food-btn-save{
+    margin-top: 10px;
+     padding: 0.5rem 1.2rem;
+    border-radius: 0.3rem;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    background-color: #5f92ca;
+    transition: background-color 0.3s ease;
+    color: #ffffff;
+}
+.pnp-add-food-btn-save:hover{
+        padding: 0.5rem 1.2rem;
+    border-radius: 0.3rem;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    background-color: #0857ac;
+    transition: background-color 0.3s ease;
+}
+.pnp-add-food-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+  max-width: 480px;
+  margin-top: 24px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.pnp-add-food-form h4 {
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #222;
+  text-align: center;
+}
+
+/* Inputs & Select */
+.pnp-input,
+.pnp-select,
+.pnp-file-input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1.5px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.pnp-input:focus,
+.pnp-select:focus,
+.pnp-file-input:focus {
+  border-color: #367dc9;
+  box-shadow: 0 0 5px #367dc9aa;
+}
+
+/* صورة المعاينة */
+.pnp-image-preview {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  margin-top: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* زر الإضافة */
+.pnp-add-food-btn {
+  display: block;
+  width: 100%;
+  padding: 12px 0;
+  background-color: #367dc9;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 16px;
+}
+
+.pnp-add-food-btn:hover {
+  background-color: #2968b3;
+}

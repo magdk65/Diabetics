@@ -1,0 +1,193 @@
+/* Dashboard Container */
+.ap-dashboard {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  padding: 32px;
+}
+
+/* Header */
+.ap-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.ap-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #121417;
+  margin: 0;
+}
+
+.ap-btn-primary {
+  background-color: #5e91c9;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.ap-btn-primary:hover {
+  background-color: #4a7ba7;
+}
+
+/* Search Section */
+.ap-search-section {
+  margin-bottom: 24px;
+}
+
+.ap-search-container {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.ap-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7582;
+}
+
+.ap-search-input {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  background-color: #f2f2f5;
+  border: 1px solid #dee0e3;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #121417;
+}
+
+.ap-search-input::placeholder {
+  color: #6b7582;
+}
+
+/* Calendar Section */
+.ap-calendar-section {
+  margin-bottom: 32px;
+}
+
+.ap-calendar-section h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #121417;
+  margin-bottom: 12px;
+}
+
+/* react-calendar custom */
+.react-calendar {
+  border: 1px solid #dee0e3;
+  border-radius: 8px;
+  width: 100% !important;
+  max-width: 400px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.react-calendar__tile {
+  padding: 10px 0;
+  font-size: 14px;
+  color: #121417;
+}
+
+.react-calendar__tile--now {
+  background: #f2f2f5;
+  border-radius: 6px;
+}
+
+.react-calendar__tile--active {
+  background: #5e91c9 !important;
+  color: #fff;
+  border-radius: 6px;
+}
+
+/* Appointments Section */
+.ap-appointments-section h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #121417;
+  margin-bottom: 16px;
+}
+
+.ap-appointments-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.ap-appointments-table th {
+  background-color: #f8f9fa;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 500;
+  color: #6b7582;
+  font-size: 14px;
+  border-bottom: 1px solid #dee0e3;
+}
+
+.ap-appointments-table td {
+  padding: 16px;
+  border-bottom: 1px solid #dee0e3;
+  font-size: 14px;
+}
+
+.ap-appointments-table tr:last-child td {
+  border-bottom: none;
+}
+
+.ap-time-cell {
+  color: #6b7582;
+}
+
+.ap-patient-name {
+  color: #121417;
+  font-weight: 500;
+}
+
+.ap-recurrence-cell {
+  color: #6b7582;
+}
+
+.ap-status-badge {
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.ap-status-confirmed {
+  background-color: #5e91c9;
+  color: white;
+}
+
+.ap-status-conflict {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ap-dashboard {
+    padding: 16px;
+  }
+
+  .ap-header h1 {
+    font-size: 24px;
+  }
+
+  .ap-appointments-table th,
+  .ap-appointments-table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+}

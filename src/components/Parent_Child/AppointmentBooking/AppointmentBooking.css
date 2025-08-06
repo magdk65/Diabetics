@@ -1,0 +1,279 @@
+.appointment-container {
+  min-height: 100vh;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.main-content--App {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  padding: 2%;
+}
+
+.content-left {
+  flex: 1;
+}
+
+.page-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #171212;
+  margin-bottom: 1.5rem;
+}
+
+.calendar-container-app {
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  user-select: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.calendar-header--app {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.calendar-header button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #82666b;
+  padding: 0.25rem 0.5rem;
+  transition: color 0.2s;
+}
+
+.calendar-header button:hover {
+  color: #171212;
+}
+
+.month-title {
+  color: #171212;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.25rem;
+  text-align: center;
+}
+
+.calendar-day-header {
+  font-weight: 600;
+  color: #82666b;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+.calendar-day {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: default;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: 500;
+}
+
+/* الأيام غير المتاحة */
+.calendar-day.unavailable {
+  color: #ccc;
+  cursor: default;
+}
+.calendar-month{
+    width: 100%;
+}
+/* الأيام المتاحة */
+.calendar-day.available {
+  color: #171212;
+  cursor: pointer;
+}
+
+.calendar-day.available:hover {
+  background-color: #f5f2f2;
+}
+
+/* اليوم المحدد */
+.calendar-day.selected {
+  background-color: #f2d1d6;
+  color: #171212;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* أوقات الحجز */
+.time-slots-section {
+  margin-top: 2rem;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #171212;
+  margin-bottom: 1rem;
+}
+
+.time-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.time-slot {
+  border: 1px solid #e5e8eb;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s, border-color 0.2s;
+  font-weight: 500;
+  color: #171212;
+}
+
+.time-slot input[type="radio"] {
+  cursor: pointer;
+}
+
+.time-slot:hover {
+  background-color: #f5f2f2;
+}
+
+.time-slot.selected {
+  background-color: #f2d1d6;
+  border-color: #f2d1d6;
+  font-weight: 700;
+}
+
+/* الشريط الجانبي */
+.sidebar--app  {
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: #fafafa;
+}
+
+.doctor-profile {
+  text-align: center;
+}
+
+.doctor-avatar {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 1rem;
+}
+
+.doctor-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.doctor-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #171212;
+  margin-bottom: 0.25rem;
+}
+
+.doctor-specialty {
+  color: #82666b;
+  margin-bottom: 0.25rem;
+}
+
+.doctor-experience {
+  color: #82666b;
+  font-size: 0.875rem;
+}
+
+.info-section {
+  margin-bottom: 1.25rem;
+}
+
+.info-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #171212;
+  margin-bottom: 0.5rem;
+}
+
+.info-text {
+  color: #82666b;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.book-button {
+  width: 100%;
+  background-color: #f2d1d6;
+  color: #171212;
+  font-weight: 600;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.book-button:hover {
+  background-color: #e3dede;
+}
+
+
+
+@media (max-width: 768px) {
+  .main-content--App {
+    flex-direction: column;
+    gap: 1.5rem; /* تباعد مناسب بين الأقسام */
+    padding: 1rem; /* تخفيف الحشوة على الشاشات الصغيرة */
+  }
+
+  /* تعديل الشريط الجانبي ليأخذ عرض كامل */
+  .sidebar {
+    width: 100%;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 1rem; /* مسافة فوق الشريط الجانبي */
+  }
+
+  /* تعديل القسم الأيسر ليأخذ عرض كامل */
+  .content-left {
+    width: 100%;
+
+  }
+  .calendar-container-app {
+    display: flex;
+    flex-direction: column;
+  }
+  .time-slots-section{
+    text-align: center;
+  }
+  .time-slots {
+        flex-wrap: nowrap;
+    gap: 0.5rem;
+  }
+  .page-title{
+    font-size: 24px;
+  }
+}

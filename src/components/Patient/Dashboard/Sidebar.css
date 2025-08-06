@@ -1,0 +1,51 @@
+/* Sidebar Styles */
+.sidebar {
+  width: 256px; /* عرض الشريط الجانبي */
+  background-color: #ffffff; /* لون الخلفية */
+  border-right: 1px solid #e5e8eb; /* خط فاصل على اليمين */
+  min-height: calc(100vh - 73px); /* ارتفاع الشريط الجانبي */
+  padding: 30px 16px; /* حشوة داخلية */
+  margin-top: 32px; /* مسافة من الأعلى */
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column; /* ترتيب العناصر عمودياً */
+  gap: 8px; /* مسافة بين العناصر */
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* مسافة بين الأيقونة والنص */
+  padding: 8px 12px; /* حشوة داخلية للعناصر */
+  border-radius: 8px; /* تدوير زوايا العنصر */
+  text-decoration: none; /* إزالة التسطير تحت النص */
+  color: #121217; /* لون النص */
+  transition: background-color 0.2s; /* تأثير انتقالي على الخلفية */
+  cursor: pointer; /* مؤشر الماوس */
+}
+
+.sidebar-item.active {
+  background-color: #e5e8f5; /* خلفية العنصر النشط */
+  color: #0d0f1c; /* لون نص العنصر النشط */
+}
+
+.sidebar-item:hover {
+  background-color: #f7fafc; /* خلفية العنصر عند المرور عليه */
+}
+
+.sidebar-icon {
+  width: 20px;
+  height: 20px;
+  color: #617afa; /* لون الأيقونة */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-item.active .sidebar-icon {
+  color: #0d0f1c; /* لون الأيقونة في العنصر النشط */
+}
+
+

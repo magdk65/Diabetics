@@ -1,0 +1,269 @@
+/* عام */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+}
+
+.sett-container {
+  background-color: #ffffff;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+}
+.sett-felx{
+    padding: 2%;
+    width: 100%;
+}
+.sett-page-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #121417;
+  margin-bottom: 32px;
+}
+
+.sett-section {
+  margin-bottom: 40px;
+}
+
+.sett-section-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #121417;
+  margin-bottom: 24px;
+}
+
+.sett-section-desc {
+  color: #5c788a;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.sett-sub-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #121417;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+/* شبكة الحقول */
+.sett-input-grid {
+    display: flex;
+    flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.sett-input-label {
+  color: #121417;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.sett-text-input {
+  background-color: #ebedf2;
+  border: 1px solid #d6dee3;
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: #121417;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.sett-text-input:focus {
+  border-color: #c9deed;
+  box-shadow: 0 0 0 2px rgba(201, 222, 237, 0.5);
+}
+
+.sett-input-with-icon {
+  position: relative;
+}
+
+.sett-input-with-icon .sett-text-input {
+  padding-right: 48px;
+}
+
+.sett-icon-button {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: #5c788a;
+  transition: color 0.2s ease-in-out;
+}
+
+.sett-icon-button:hover {
+  color: #121417;
+}
+
+.sett-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.sett-btn-save {
+  margin-top: 24px;
+  background-color: #c9deed;
+  color: #121417;
+  border: none;
+  border-radius: 9999px;
+  padding: 8px 24px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.sett-btn-save:hover {
+  background-color: #b3d0e0;
+}
+
+/* راديو جروب */
+.sett-radio-container {
+    width: 100%;
+  display: grid;
+  gap: 16px;
+}
+
+.sett-radio-group {
+  display: flex;
+  width: 100%;
+  gap: 16px;
+}
+
+.sett-radio-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #ebedf2;
+  border: 1px solid #d6dee3;
+  border-radius: 8px;
+  padding: 16px;
+  width: 100%;
+}
+
+.sett-radio-input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #5c788a;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+}
+
+.sett-radio-input:checked {
+  border-color: #121417;
+  background-color: #121417;
+}
+
+.sett-radio-input:checked::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+}
+
+.sett-radio-label {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  user-select: none;
+}
+
+.sett-radio-title {
+  font-weight: 600;
+  font-size: 16px;
+  color: #121417;
+}
+
+.sett-radio-desc {
+  font-size: 14px;
+  color: #5c788a;
+}
+
+/* التبديل */
+.sett-toggle-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ebedf2;
+  border-radius: 12px;
+  padding: 16px 16px;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.sett-toggle-labels {
+  display: flex;
+  flex-direction: column;
+}
+
+.sett-toggle-title {
+  font-weight: 600;
+  color: #121417;
+}
+
+.sett-toggle-desc {
+  font-size: 14px;
+  color: #5c788a;
+}
+
+.sett-switch {
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 22px;
+}
+
+.sett-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.sett-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #d6dee3;
+  transition: 0.4s;
+  border-radius: 12px;
+}
+
+.sett-slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.sett-switch input:checked + .sett-slider {
+  background-color: #121417;
+}
+
+.sett-switch input:checked + .sett-slider:before {
+  transform: translateX(16px);
+}

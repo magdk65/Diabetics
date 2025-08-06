@@ -1,0 +1,190 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+  background-color: #ffffff;
+}
+.flex-care-team-t{
+    width: 100%;
+    padding: 2%;
+}
+/* Page Container */
+.care-team-page {
+  min-height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+}
+
+.care-team-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #171212;
+  margin-bottom: 32px;
+}
+
+/* Cards Container */
+.care-team-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.care-team-empty {
+  text-align: center;
+  font-size: 16px;
+  color: #82666b;
+  margin-top: 20px;
+}
+
+/* Doctor Card */
+.doctor-card {
+    width: 100%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: box-shadow 0.2s ease;
+}
+
+.doctor-card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Doctor Info */
+.doctor-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.doctor-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #82666b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.doctor-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.doctor-details h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #171212;
+  margin-bottom: 4px;
+}
+
+.doctor-details p {
+  color: #82666b;
+  font-size: 14px;
+}
+
+/* Actions */
+.doctor-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.doctor-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+}
+
+/* Chat Button */
+.chat-btn {
+  background-color: #f5f2f2;
+  color: #171212;
+  border: 1px solid #f5f2f2;
+}
+
+.chat-btn:hover {
+  background-color: #82666b;
+  color: white;
+}
+
+/* Call Button */
+.call-btn {
+  background-color: #f2d1d6;
+  color: #171212;
+  border: none;
+}
+
+.call-btn:hover {
+  background-color: #82666b;
+  color: white;
+}
+
+/* Arrow Icon */
+.arrow-icon {
+  width: 20px;
+  height: 20px;
+  color: #82666b;
+}
+
+/* Emergency Button */
+.emergency-btn {
+  background-color: #f2d1d6;
+  color: #171212;
+  border: none;
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.emergency-btn:hover {
+  background-color: #82666b;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .care-team-page {
+    padding: 16px;
+  }
+
+  .doctor-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .doctor-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

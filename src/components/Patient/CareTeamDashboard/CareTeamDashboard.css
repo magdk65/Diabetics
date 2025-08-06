@@ -1,0 +1,385 @@
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+}
+.main-content-care1 {
+  flex: 1;
+  padding: 32px;
+  overflow-y: auto;
+  margin: auto;
+}
+
+.content-wrapper1 {
+    padding: 20px;
+    width: 100%;
+}
+
+.page-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #121217;
+  margin-bottom: 32px;
+}
+
+.tabs {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 32px;
+  border-bottom: 0.5px solid;
+  border-radius: 2px;
+}
+
+.tab {
+  background: none;
+  border: none;
+  padding-bottom: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  color: #696e82;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.tab.active {
+  color: #121217;
+  font-weight: 600;
+  border-bottom-color: #121217;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #121217;
+  margin-bottom: 24px;
+}
+
+.upcoming-section {
+    margin-top: 8px;
+}
+
+.upcoming-card {
+  background-color: #f4e6d7;
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.calendar-illustration {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.calendar {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 120px;
+}
+
+.calendar-header {
+  height: 12px;
+  background-color: #1f2937;
+  border-radius: 4px 4px 0 0;
+  margin-bottom: 8px;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  margin-bottom: 4px;
+  font-size: 10px;
+  color: #6b7280;
+  text-align: center;
+}
+
+.calendar-dates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  font-size: 8px;
+  color: #1f2937;
+  text-align: center;
+}
+
+
+
+
+.empty-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #121217;
+  margin-bottom: 8px;
+}
+ .img{
+width: 100%;
+height: 100%;
+
+opacity: 1;
+border-radius: 12px;
+
+}
+.flex5{
+    width: 100%;
+    display: flex;
+}
+.empty-description {
+  color: #696e82;
+  margin-bottom: 24px;
+  line-height: 2;
+  width: 100%;
+  text-align: center;
+}
+
+.schedule-btn {
+  background-color: #121217;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.schedule-btn:hover {
+  background-color: rgba(18, 18, 23, 0.9);
+}
+
+.appointments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.appointment-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.appointment-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.doctor-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.doctor-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.doctor-details h4 {
+  font-weight: 600;
+  color: #121217;
+  margin-bottom: 4px;
+}
+
+.doctor-details p {
+  color: #696e82;
+  font-size: 14px;
+}
+
+.appointment-date {
+  color: #696e82;
+  font-weight: 500;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1024px) {
+  .main-content {
+    padding: 24px;
+  }
+
+  .content-wrapper {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .sidebar-content {
+    padding: 16px;
+  }
+
+  .user-profile {
+    margin-bottom: 16px;
+  }
+
+  .navigation {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 4px;
+  }
+
+  .nav-item {
+    flex-shrink: 0;
+    min-width: 80px;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px;
+  }
+
+  .nav-label {
+    font-size: 12px;
+  }
+
+  .branding {
+    position: static;
+    margin-top: 16px;
+    justify-content: center;
+  }
+
+  .main-content-care {
+    padding: 16px;
+  }
+
+  .page-title {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  .tabs {
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .upcoming-card {
+    padding: 24px 16px;
+  }
+
+  .calendar-illustration {
+    margin-bottom: 16px;
+  }
+
+  .leaf {
+    display: none;
+  }
+
+  .appointment-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .appointment-info {
+    width: 100%;
+  }
+
+  .appointment-date {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar-content {
+    padding: 12px;
+  }
+
+  .main-content {
+    padding: 12px;
+  }
+
+  .page-title {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .upcoming-card {
+    padding: 16px;
+  }
+
+  .empty-title {
+    font-size: 18px;
+  }
+
+  .empty-description {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .calendar {
+    width: 100px;
+    padding: 12px;
+  }
+
+  .calendar-dates {
+    font-size: 7px;
+  }
+
+  .calendar-dates div {
+    min-height: 10px;
+  }
+}
+
+/* Flexbox utilities for better layout control */
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-1 {
+  flex: 1;
+}

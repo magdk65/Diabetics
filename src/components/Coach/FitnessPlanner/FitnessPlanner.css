@@ -1,0 +1,423 @@
+:root {
+  --white: #ffffff;
+  --light-gray: #e5e8eb;
+  --lighter-gray: #f2f2f5;
+  --gray-text: #667582;
+  --dark-text: #121417;
+  --blue: #367dc9;
+  --dark-blue: #2a6bb0;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--white);
+}
+
+/* Container */
+.fp-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.fp-sidebar {
+  width: 300px;
+  border-right: 1px solid var(--light-gray);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.fp-search-wrapper {
+  position: relative;
+}
+
+.fp-search-input {
+  width: 100%;
+  padding: 8px 16px 8px 36px;
+  border-radius: 6px;
+  border: 1px solid var(--light-gray);
+  background-color: var(--lighter-gray);
+  outline: none;
+  color: var(--dark-text);
+}
+
+.fp-search-input:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 1px var(--blue);
+}
+
+.fp-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray-text);
+  width: 16px;
+  height: 16px;
+}
+
+.fp-section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--dark-text);
+  margin-bottom: 8px;
+}
+
+.fp-category-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.fp-category-btn {
+  padding: 8px 16px;
+  border-radius: 9999px;
+  border: 1px solid var(--light-gray);
+  color: var(--gray-text);
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.fp-category-btn:hover,
+.fp-category-btn.active {
+  background-color: var(--lighter-gray);
+  color: var(--dark-text);
+}
+
+.fp-search-results {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fp-search-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.fp-search-item:hover {
+  background-color: var(--lighter-gray);
+}
+
+.fp-icon-wrapper {
+  padding: 8px;
+  border-radius: 9999px;
+  background-color: var(--lighter-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fp-search-name {
+  font-weight: 500;
+  color: var(--dark-text);
+}
+
+.fp-search-desc {
+  font-size: 14px;
+  color: var(--gray-text);
+}
+
+/* Main Content */
+.fp-main {
+  flex: 1;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.fp-main-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--dark-text);
+}
+
+.fp-week-plan {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 24px;
+}
+.fp-exercise-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.felx-fe-edit{
+    width: 100%;
+}
+
+.fp-day-card {
+  background-color: var(--white);
+  border: 1px solid var(--light-gray);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fp-day-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--dark-text);
+}
+.fp-exercise-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.fp-exercise-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  transition: color 0.2s ease;
+  color: #555;
+}
+
+.fp-exercise-actions button:hover {
+  color: #367dc9; /* لون أزرق عند التمرير */
+}
+
+.fp-exercise-actions svg {
+  width: 18px;
+  height: 18px;
+}
+
+.fp-day-exercises {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 16px;
+}
+
+.fp-exercise-item {
+  font-size: 14px;
+  color: var(--dark-text);
+  line-height: 1.4;
+}
+
+.fp-exercise-details {
+  list-style: disc;
+  padding-left: 20px;
+  font-size: 13px;
+  color: var(--gray-text);
+}
+
+.fp-add-btn {
+  margin-top: auto;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid var(--light-gray);
+  color: var(--gray-text);
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.fp-add-btn:hover {
+  background-color: var(--lighter-gray);
+}
+
+/* Action Buttons */
+.fp-action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 16px;
+}
+
+.fp-save-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  background-color: var(--blue);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.fp-save-btn:hover {
+  background-color: var(--dark-blue);
+}
+
+.fp-draft-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid var(--light-gray);
+  color: var(--gray-text);
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.fp-draft-btn:hover {
+  background-color: var(--lighter-gray);
+}
+
+.fp-cancel-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: var(--gray-text);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.fp-cancel-btn:hover {
+  background-color: var(--lighter-gray);
+}
+/* زر إضافة تمرين جديد */
+.fp-add-new-btn {
+  margin-top: 12px;
+  padding: 10px 16px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--light-gray);
+  background-color: transparent;
+  color: var(--blue);
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.fp-add-new-btn:hover {
+  background-color: var(--lighter-gray);
+  color: var(--dark-text);
+}
+
+/* نموذج إضافة تمرين جديد */
+.fp-add-new-form {
+  margin-top: 12px;
+  padding: 16px;
+  background-color: var(--lighter-gray);
+  border-radius: 8px;
+  border: 1px solid var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.fp-add-new-form h3 {
+  margin: 0 0 8px 0;
+  color: var(--dark-text);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.fp-add-new-form input[type="text"],
+.fp-add-new-form textarea,
+.fp-add-new-form select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--light-gray);
+  outline: none;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--dark-text);
+  transition: border-color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.fp-add-new-form input[type="text"]:focus,
+.fp-add-new-form textarea:focus,
+.fp-add-new-form select:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 2px rgba(54, 125, 201, 0.3);
+}
+
+.fp-add-new-form textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.fp-add-new-form input[type="number"] {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.fp-add-new-form input[type="text"] + input[type="text"],
+.fp-add-new-form input[type="text"] + input[type="number"],
+.fp-add-new-form input[type="number"] + input[type="number"] {
+  margin-top: 8px;
+}
+
+.fp-add-new-form button.fp-save-btn {
+  align-self: flex-start;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--blue);
+  color: var(--white);
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.fp-add-new-form button.fp-save-btn:hover {
+  background-color: var(--dark-blue);
+}
+/* تنسيق عام للـ select */
+.fp-add-new-form select,
+.fp-day-select {
+  appearance: none; /* إزالة الشكل الافتراضي */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: var(--white);
+  border: 1px solid var(--light-gray);
+  padding: 8px 36px 8px 12px; /* مساحة أكبر من اليمين للسهم */
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--dark-text);
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px 7px;
+  transition: border-color 0.2s;
+}
+
+.fp-add-new-form select:focus,
+.fp-day-select:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 2px rgba(54, 125, 201, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .fp-container {
+    flex-direction: column;
+  }
+
+  .fp-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--light-gray);
+  }
+
+  .fp-week-plan {
+    grid-template-columns: 1fr;
+  }
+}

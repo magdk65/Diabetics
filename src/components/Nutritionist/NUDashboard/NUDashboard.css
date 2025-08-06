@@ -1,0 +1,183 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+  background-color: #ffffff;
+  color: #121417;
+}
+
+.NU_N-dashboard-container {
+
+  display: flex;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+.flex-nu-main{
+    padding: 2%;
+    width: 100%;
+}
+/* Main Content */
+.NU_N-main-content {
+    display: flex;
+  width: 100%;
+}
+
+.NU_N-main-title {
+  font-size: 32px; /* أكبر شوي */
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: #121417;
+}
+
+.NU_N-section-block {
+  margin-bottom: 40px;
+}
+
+.NU_N-section-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #121417;
+}
+
+/* Cards */
+.NU_N-card {
+  padding: 24px;
+  background-color: #f8f9fb;
+  border-radius: 12px;
+  border: 1px solid #e5e8eb;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.NU_N-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Patient Progress Card */
+.NU_N-patient-progress-card .NU_N-card-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #6b7582;
+  margin-bottom: 12px;
+}
+
+.NU_N-progress-summary {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.NU_N-progress-value {
+  font-size: 36px;
+  font-weight: 700;
+  color: #121417;
+  font-variant-numeric: tabular-nums;
+}
+
+.NU_N-progress-period {
+  font-size: 16px;
+  color: #6b7582;
+}
+
+.NU_N-progress-percentage {
+  font-size: 16px;
+  font-weight: 500;
+  color: #e83808;
+}
+
+/* Graph */
+.NU_N-graph-container {
+  height: 200px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* Upcoming Appointments Table */
+.NU_N-appointments-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.NU_N-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.NU_N-table thead {
+  background-color: #f0f2f5;
+}
+
+.NU_N-table th {
+  text-align: left;
+  padding: 14px 24px;
+  color: #6b7582;
+  font-weight: 600;
+  border-bottom: 1px solid #dee0e3;
+}
+
+.NU_N-table tbody tr {
+  border-bottom: 1px solid #f0f2f5;
+  transition: background-color 0.2s ease;
+}
+
+.NU_N-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.NU_N-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.NU_N-table td {
+  padding: 12px 24px;
+  color: #121417;
+}
+
+.NU_N-table td:first-child {
+  font-weight: 500;
+}
+
+.NU_N-badge {
+  background-color: #e5e8eb;
+  color: #6b7582;
+  border-radius: 9999px;
+  padding: 4px 12px;
+  font-size: 14px;
+  display: inline-block;
+}
+
+/* Recent Activity */
+.NU_N-activity-list {
+  display: grid;
+  gap: 20px;
+}
+
+.NU_N-activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.NU_N-activity-icon {
+  height: 22px;
+  width: 22px;
+  color: #6b7582;
+  margin-top: 2px;
+}
+
+.NU_N-activity-text {
+  color: #121417;
+}
+
+.NU_N-activity-highlight {
+  font-weight: 600;
+}
+
+.NU_N-activity-date {
+  font-size: 14px;
+  color: #6b7582;
+  margin-top: 4px;
+}

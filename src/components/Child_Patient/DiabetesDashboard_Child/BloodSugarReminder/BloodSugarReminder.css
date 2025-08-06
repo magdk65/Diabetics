@@ -1,0 +1,114 @@
+.blood-sugar-container {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+}
+
+.content-wrapper-p {
+  width: 100%;
+  text-align: center;
+  padding-top: 6%;
+}
+
+.felx-blood {
+  margin: 0;
+  width: 100%;
+}
+
+.main-heading-p {
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 2rem 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  font-size: 1.25rem;
+  color: #4a4a4a;
+  line-height: 1.6;
+  margin: 0 0 3rem 0;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* زر أو رابط بنفس التنسيق */
+.check-button {
+  display: inline-block; /* مهم حتى يظهر الـ Link كبوتون */
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 18px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none; /* حتى يختفي خط الرابط */
+  transition: all 0.2s ease;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 12px rgba(30, 144, 255, 0.3);
+}
+
+.check-button:hover {
+  background-color: #0080ff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(30, 144, 255, 0.4);
+}
+
+.check-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(30, 144, 255, 0.3);
+}
+
+.help-text {
+  font-size: 1rem;
+  color: #666;
+  margin: 0 0 4rem 0;
+  line-height: 1.5;
+}
+
+.reminder-text {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main-heading-p {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+  }
+
+  .content-wrapper-p {
+    padding: 20px 15px;
+  }
+
+  .check-button {
+    padding: 16px 32px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-heading-p {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .check-button {
+    padding: 14px 28px;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,217 @@
+.meal-plan-dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+/* Main Layout */
+.main-content-mealplan {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+/* Sidebar */
+.sidebar-mealplan {
+  width: 20rem;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-right: 1px solid #e5e8eb;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 50%;
+}
+
+.sidebar-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.recipe-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.recipe-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+}
+
+.recipe-image {
+  border-radius: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.recipe-title {
+    font-size: 14px;
+  font-weight: 500;
+}
+.main-layout{
+    display: flex;
+    width: 100%;
+    padding: 16px;
+}
+.recipe-calories {
+  font-size: 0.875rem;
+  color: #61758a;
+}
+
+.add-to-day-button {
+  background: #0d80f2;
+  color: white;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.add-to-day-button:hover {
+  background: #0b6ed0;
+}
+
+/* Add Recipe Form */
+.add-recipe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.add-recipe-form input {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ddd;
+}
+
+.add-recipe-button {
+  padding: 0.5rem;
+  background: #0d80f2;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.add-recipe-button:hover {
+  background: #0b6ed0;
+}
+
+.day-selector {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ddd;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 1rem;
+}
+
+.main-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.day-section--mealplan {
+  margin-bottom: 1rem;
+}
+
+.day-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.meal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.meal-item--mealplan {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #fff;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+}
+
+.meal-image {
+  border-radius: 0.5rem;
+}
+
+.meal-name--mealplan{
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.meal-calories {
+  font-size: 0.875rem;
+  color: #61758a;
+}
+
+.empty-day {
+  color: #999;
+  font-size: 0.875rem;
+}
+
+/* Save Button */
+.save-button-wrapper {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.save-button {
+  background-color: #0d80f2;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+.save-button:hover {
+  background-color: #0b6ed0;
+}
+/* زر تعديل الوصفة */
+.edit-recipe-button {
+  background: #ffc107; /* أصفر */
+  color: white;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  margin-left: 0.25rem;
+}
+
+.edit-recipe-button:hover {
+  background: #e0a800;
+}
+
+/* زر حذف الوجبة */
+.delete-meal-button {
+  color: white;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.delete-meal-button:hover {
+  background: #cfcfcf;
+}

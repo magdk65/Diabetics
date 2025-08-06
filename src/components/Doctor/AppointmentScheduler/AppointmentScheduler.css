@@ -1,0 +1,238 @@
+.app-p-container {
+  min-height: 100vh;
+  background-color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  display: flex;
+  width: 100%;
+}
+
+.app-p-main-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Sidebar Styles */
+.app-p-sidebar {
+  width: 320px;
+  border-right: 1px solid #e5e8eb;
+  background-color: #f7fafc;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-p-search-container {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.app-p-search-input {
+  width: 100%;
+  padding: 12px 12px 12px 16px;
+  background-color: #e8edf2;
+  border: 1px solid #cfdbe8;
+  border-radius: 8px;
+  color: #0d141c;
+  font-size: 14px;
+}
+
+.app-p-search-input::placeholder {
+  color: #4d7599;
+}
+
+.app-p-search-input:focus {
+  outline: none;
+  border-color: #1285e8;
+}
+
+.app-p-patients-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+}
+
+.app-p-patient-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.app-p-patient-item:hover,
+.app-p-patient-item.selected {
+  background-color: #e8edf2;
+}
+
+.app-p-patient-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #cfdbe8;
+}
+
+.app-p-patient-info {
+  flex: 1;
+}
+
+.app-p-patient-name {
+  font-weight: 500;
+  color: #0d141c;
+  margin-bottom: 2px;
+}
+
+.app-p-patient-id {
+  font-size: 12px;
+  color: #4d7599;
+}
+
+/* Main Content */
+.app-p-main-content {
+  flex: 1;
+  padding: 2%;
+}
+
+.app-p-content-container {
+    width: 100%;
+}
+
+.app-p-page-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0d141c;
+  margin-bottom: 8px;
+}
+
+.app-p-page-subtitle {
+  color: #4d7599;
+  margin-bottom: 32px;
+}
+
+.app-p-section {
+  margin-bottom: 32px;
+}
+
+.app-p-section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #0d141c;
+  margin-bottom: 16px;
+}
+
+/* Patient Info Card */
+.app-p-patient-info-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background-color: #f7fafc;
+  border-radius: 8px;
+  border: 1px solid #e5e8eb;
+  margin-bottom: 16px;
+}
+
+.app-p-patient-info-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #cfdbe8;
+}
+
+/* Time Slots */
+.app-p-time-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.app-p-time-slot {
+  padding: 8px 16px;
+  border: 1px solid #e5e8eb;
+  border-radius: 6px;
+  background-color: white;
+  color: #0d141c;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.app-p-time-slot:hover {
+  background-color: #e8edf2;
+}
+
+.app-p-time-slot.selected {
+  background-color: #1285e8;
+  color: white;
+  border-color: #1285e8;
+}
+
+/* Disabled (Booked) Time Slot */
+.app-p-time-slot.disabled,
+.app-p-time-slot:disabled {
+  background-color: #f0f0f0;
+  color: #b0b0b0;
+  border-color: #ddd;
+  cursor: not-allowed;
+}
+
+.app-p-time-slot.disabled:hover {
+  background-color: #f0f0f0;
+}
+
+/* Schedule Button */
+.app-p-schedule-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.app-p-schedule-button {
+  padding: 12px 32px;
+  background-color: #1285e8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.app-p-schedule-button:hover {
+  background-color: #0f6bb8;
+}
+
+.app-p-schedule-button:disabled {
+  background-color: #cfdbe8;
+  cursor: not-allowed;
+}
+
+/* React Calendar Overrides */
+.react-calendar {
+  border: 1px solid #e5e8eb;
+  border-radius: 8px;
+  padding: 16px;
+  width: 100%;
+  max-width: 350px;
+}
+
+.react-calendar__tile {
+  border-radius: 6px;
+  padding: 8px 0;
+}
+
+.react-calendar__tile--active {
+  background: #1285e8;
+  color: white;
+}
+
+.react-calendar__tile--now {
+  background: #e8edf2;
+  border-radius: 6px;
+}

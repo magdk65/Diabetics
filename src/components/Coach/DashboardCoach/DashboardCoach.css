@@ -1,0 +1,159 @@
+.coach-dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+/* Main Content */
+.coach-main-content {
+    width: 100%;
+  padding: 2%;
+}
+
+.coach-page-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #121417;
+  margin-bottom: 32px;
+}
+
+/* Search and Filter */
+.coach-search-filters {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.coach-search-container {
+  position: relative;
+  flex: 1;
+  max-width: 384px;
+}
+
+.coach-search-input {
+  width: 100%;
+  padding: 12px 12px 12px 16px;
+  background-color: #f2f2f5;
+  border: 1px solid #dee0e3;
+  border-radius: 6px;
+  color: #121417;
+  font-size: 14px;
+}
+
+.coach-search-input::placeholder {
+  color: #6b7582;
+}
+
+.coach-search-input:focus {
+  outline: none;
+  border-color: #121417;
+}
+
+.coach-filter-container select.coach-filter-select {
+  padding: 12px 32px 12px 16px;
+  background-color: #f2f2f5;
+  border: 1px solid #dee0e3;
+  border-radius: 6px;
+  color: #121417;
+  font-size: 14px;
+  cursor: pointer;
+  appearance: none;
+}
+
+/* Table */
+.coach-table-container {
+  background-color: #ffffff;
+  border: 1px solid #dee0e3;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.coach-patients-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.coach-patients-table th {
+  background-color: #ffffff;
+  padding: 16px;
+  text-align: left;
+  font-weight: 500;
+  color: #121417;
+  font-size: 14px;
+  border-bottom: 1px solid #dee0e3;
+}
+
+.coach-patients-table td {
+  padding: 16px;
+  border-bottom: 1px solid #dee0e3;
+  font-size: 14px;
+}
+
+.coach-patient-name {
+  font-weight: 500;
+  color: #121417;
+}
+
+.coach-last-activity {
+  color: #6b7582;
+}
+
+.coach-adherence-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.coach-adherent {
+  background-color: #e5e8eb;
+  color: #121417;
+}
+
+.coach-non-adherent {
+  background-color: #f2f2f5;
+  color: #6b7582;
+}
+
+.coach-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.coach-icon-btn {
+  background: none;
+  border: none;
+  color: #6b7582;
+  cursor: pointer;
+  padding: 4px;
+  transition: 0.2s;
+}
+
+.coach-icon-btn:hover {
+  color: #121417;
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .coach-dashboard-container {
+    padding: 16px;
+  }
+
+  .coach-search-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .coach-patients-table {
+    font-size: 12px;
+  }
+
+  .coach-patients-table th,
+  .coach-patients-table td {
+    padding: 12px 8px;
+  }
+}

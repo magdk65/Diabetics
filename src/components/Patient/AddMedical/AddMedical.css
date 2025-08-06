@@ -1,0 +1,405 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.health-tracker {
+  min-height: 100vh;
+  background-color: #fafafa;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif;
+}
+
+/* Header Styles */
+.header {
+  border-bottom: 1px solid #e5e8eb;
+  background-color: #ffffff;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background-color: #171212;
+  border-radius: 0.25rem;
+  color: #ffffff;
+}
+
+.logo-text {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #171212;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: #171212;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #617afa;
+}
+
+.nav-link.active {
+  color: #617afa;
+  font-weight: 600;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.notification-btn {
+  background: none;
+  border: none;
+  color: #171212;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease;
+}
+
+.notification-btn:hover {
+  background-color: #f7fafc;
+}
+
+.user-avatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Main Content */
+.main-content {
+    margin: 1%;
+  padding: 3rem 1.5rem;
+  width: 100%;
+}
+
+.container-addm {
+  width: 100%;
+}
+
+.page-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #171212;
+  margin-top: 4%;
+  margin-bottom: 2rem;
+}
+
+/* Form Styles */
+.medication-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  color: #171212;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.form-input {
+  padding: 0.75rem 1rem;
+  border: 1px solid #e5e8eb;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: #ffffff;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #617afa;
+  box-shadow: 0 0 0 3px rgba(97, 122, 250, 0.1);
+}
+
+.form-input::placeholder {
+  color: #8a6166;
+}
+
+/* Select Styles */
+.select-wrapper {
+  position: relative;
+}
+
+.form-select {
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
+  border: 1px solid #e5e8eb;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  background-color: #ffffff;
+  cursor: pointer;
+  appearance: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: #617afa;
+  box-shadow: 0 0 0 3px rgba(97, 122, 250, 0.1);
+}
+
+.select-arrow {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #8a6166;
+}
+
+/* Notifications Section */
+.notifications-section {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.section-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #171212;
+}
+
+/* Checkbox Styles */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.checkbox-input {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 1px solid #e5e8eb;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  accent-color: #617afa;
+}
+
+.checkbox-label {
+  color: #171212;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  background-color: #617afa;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.875rem 1.5rem;
+  border: none;
+  border-radius: 9999px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.submit-btn:hover {
+  background-color: #4f63d2;
+}
+
+.submit-btn:active {
+  transform: translateY(1px);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .header-container {
+    padding: 1rem;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .logo-text {
+    font-size: 1rem;
+  }
+
+  .main-content {
+    padding: 2rem 1rem;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .medication-form {
+    gap: 1.25rem;
+  }
+
+  .header-actions {
+    gap: 0.5rem;
+  }
+}
+.flex4{
+    display: flex;
+    width: 100%;
+}
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0.75rem;
+  }
+
+  .logo-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  .user-avatar {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  .main-content {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  .page-title {
+    font-size: 1.375rem;
+  }
+
+  .form-input,
+  .form-select {
+    padding: 0.625rem 0.875rem;
+  }
+
+  .form-select {
+    padding-right: 2.25rem;
+  }
+
+  .submit-btn {
+    padding: 0.75rem 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header-container {
+    padding: 1.25rem 2rem;
+  }
+
+  .main-content {
+    padding: 4rem 2rem;
+  }
+
+  .navigation {
+    gap: 2.5rem;
+  }
+}
+
+/* Focus and Accessibility */
+.form-input:focus,
+.form-select:focus,
+.checkbox-input:focus,
+.submit-btn:focus {
+  outline: 2px solid #617afa;
+  outline-offset: 2px;
+}
+
+.notification-btn:focus {
+  outline: 2px solid #617afa;
+  outline-offset: 2px;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .health-tracker {
+    background-color: #0d141c;
+    color: #ffffff;
+  }
+
+  .header {
+    border-bottom-color: #2d3748;
+    background-color: #0d141c;
+  }
+
+  .logo-text,
+  .nav-link,
+  .page-title,
+  .form-label,
+  .section-title,
+  .checkbox-label {
+    color: #ffffff;
+  }
+
+  .form-input,
+  .form-select {
+    background-color: #1a202c;
+    border-color: #2d3748;
+    color: #ffffff;
+  }
+
+  .form-input::placeholder {
+    color: #a0aec0;
+  }
+
+  .notification-btn {
+    color: #ffffff;
+  }
+
+  .notification-btn:hover {
+    background-color: #2d3748;
+  }
+}

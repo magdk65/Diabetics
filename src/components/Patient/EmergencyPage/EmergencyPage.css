@@ -1,0 +1,282 @@
+/* Main Content Styles */
+.emergency-page {
+  min-height: 100vh;
+  background-color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+}
+
+.main-content-emerg {
+  width: 100%;
+  padding: 16px 0;
+  display: flex;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.page-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #0d0f1c;
+  margin-bottom: 1rem;
+}
+.body-care{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  
+}
+.page-subtitle {
+  color: #4769fa;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+/* Contacts Section */
+.contacts-section {
+  margin-bottom: 3rem;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0d0f1c;
+}
+
+.add-contact-btn {
+  background: transparent;
+  border: 1px solid #e5e8eb;
+  color: #0d0f1c;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.add-contact-btn:hover {
+  background-color: #f7fafc;
+  border-color: #4769fa;
+  color: #4769fa;
+}
+
+.add-contact-btn:focus {
+  outline: 2px solid #4769fa;
+  outline-offset: 2px;
+}
+
+.contacts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Alert Section */
+.alert-section {
+  margin-top: 3rem;
+}
+.main-section-emerg{
+  padding: 30px;
+}
+.alert-description {
+  color: #0d0f1c;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.emergency-alert-btn {
+  background-color: #4769fa;
+  color: white;
+  border: none;
+  padding: 1.0rem 1rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.emergency-alert-btn:hover:not(:disabled) {
+  background-color: #47579e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(71, 105, 250, 0.3);
+}
+
+.emergency-alert-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.emergency-alert-btn.sending {
+  background-color: #47579e;
+}
+
+.emergency-alert-btn:focus {
+  outline: 2px solid #4769fa;
+  outline-offset: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 2rem 1rem;
+  }
+
+  .page-title {
+    font-size: 1.875rem;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .emergency-alert-btn {
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+}
+
+/* Loading Animation */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.emergency-alert-btn.sending {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+.contact-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border: 1px solid #e5e8eb;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.contact-card:hover,
+.contact-card.hovered {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #e5e8f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.phone-avatar {
+  background-color: #e5e8f5;
+}
+
+.phone-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #47579e;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.contact-name {
+  font-weight: 600;
+  color: #0d0f1c;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.contact-subtitle {
+  color: #4769fa;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.edit-button {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 0.375rem;
+  transition: background-color 0.2s ease;
+}
+
+.edit-button:hover {
+  background-color: #e5e8f5;
+}
+
+.edit-button:focus {
+  outline: 2px solid #4769fa;
+  outline-offset: 2px;
+}
+
+.edit-icon {
+  width: 1rem;
+  height: 1rem;
+  color: #47579e;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .contact-card {
+    padding: 1rem;
+  }
+
+  .contact-info {
+    gap: 0.75rem;
+  }
+
+  .contact-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .phone-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}

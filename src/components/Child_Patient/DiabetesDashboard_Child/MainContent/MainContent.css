@@ -1,0 +1,68 @@
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+
+.content-container {
+  max-width: 32rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #121417;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .main-title {
+    font-size: 3rem;
+  }
+}
+
+.main-description {
+  font-size: 1.125rem;
+  color: #121417;
+  line-height: 1.6;
+  max-width: 24rem;
+  margin: 0 auto;
+}
+
+.button-container {
+  padding-top: 1rem;
+}
+
+.check-button {
+  background-color: #1282eb;
+  color: white;
+  padding: 0.75rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.check-button:hover {
+  background-color: #0f6bb8;
+}
+
+.help-text {
+  color: #121417;
+  padding-top: 1rem;
+}
+
+.reminder-text {
+  color: #121417;
+  font-weight: 500;
+  padding-top: 2rem;
+}

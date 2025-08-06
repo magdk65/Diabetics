@@ -1,0 +1,162 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif;
+  line-height: 1.5;
+}
+
+/* Main container */
+.nu-dashboard-container {
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.nu-main {
+  width: 100%;
+  display: flex;
+}
+.flex-nu-peofile{
+  width: 100%;
+}
+.nu-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #121417;
+  margin-bottom: 32px;
+}
+
+.nu-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 4%;
+}
+
+/* Card styles */
+.nu-card {
+  background-color: #ffffff;
+  border: 1px solid #dee0e3;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.nu-card-header {
+  padding: 24px 24px 0 24px;
+}
+
+.nu-card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #121417;
+}
+
+.nu-card-content {
+  padding: 24px;
+}
+
+/* Form styles */
+.nu-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.nu-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nu-form-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #121417;
+}
+
+.nu-form-input,
+.nu-form-textarea,
+.nu-form-select {
+  padding: 12px;
+  border: 1px solid #dee0e3;
+  border-radius: 6px;
+  background-color: #f2f2f5;
+  font-size: 14px;
+  color: #121417;
+  transition: border-color 0.2s ease;
+}
+
+.nu-form-input:focus,
+.nu-form-textarea:focus,
+.nu-form-select:focus {
+  outline: none;
+  border-color: #dbe8f2;
+}
+
+.nu-form-textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+.nu-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+/* Button styles */
+.nu-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.nu-btn-primary {
+  background-color: #dbe8f2;
+  color: #121417;
+}
+
+.nu-btn-primary:hover {
+  background-color: #c8ddf0;
+}
+
+/* Checkbox styles */
+.nu-checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.nu-checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #121417;
+}
+
+.nu-checkbox-label {
+  font-size: 14px;
+  color: #121417;
+  cursor: pointer;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .nu-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nu-main {
+    padding: 16px;
+  }
+}
