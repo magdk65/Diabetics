@@ -1,0 +1,141 @@
+.modic-container {
+  min-height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+}
+
+.modic-wrapper {
+  width: 100%;
+  padding: 2%;
+}
+
+/* Breadcrumb */
+.modic-breadcrumb {
+  margin-bottom: 32px;
+  font-size: 14px;
+}
+
+.modic-breadcrumb-item {
+  color: #667582;
+}
+
+.modic-breadcrumb-separator {
+  margin: 0 8px;
+  color: #667582;
+}
+
+.modic-breadcrumb-current {
+  color: #121417;
+  font-weight: 500;
+}
+
+/* Main Heading */
+.modic-main-heading {
+  color: #121417;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 32px;
+  line-height: 1.2;
+}
+
+/* Form */
+.modic-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.modic-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modic-form-label {
+  color: #121417;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.modic-form-input {
+  background-color: #f2f2f5;
+  border: none;
+  color: #121417;
+  height: 48px;
+  border-radius: 8px;
+  padding: 0 16px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.modic-form-input::placeholder {
+  color: #667582;
+}
+
+.modic-form-input:focus {
+  box-shadow: 0 0 0 2px #338ff2;
+}
+
+.modic-form-textarea {
+  background-color: #f2f2f5;
+  border: none;
+  color: #121417;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 16px;
+  outline: none;
+  resize: none;
+  min-height: 120px;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.modic-form-textarea::placeholder {
+  color: #667582;
+}
+
+.modic-form-textarea:focus {
+  box-shadow: 0 0 0 2px #338ff2;
+}
+
+.modic-submit-section {
+  padding-top: 24px;
+}
+
+.modic-submit-button {
+  background-color: #338ff2;
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.modic-submit-button:hover {
+  background-color: #2980e6;
+}
+
+.modic-submit-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #338ff2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modic-container {
+    padding: 16px;
+  }
+  
+  .modic-main-heading {
+    font-size: 28px;
+  }
+  
+  .modic-wrapper {
+    max-width: 100%;
+  }
+}

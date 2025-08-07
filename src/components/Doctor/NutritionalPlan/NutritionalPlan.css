@@ -1,0 +1,314 @@
+/* Container and Layout */
+.plan-nut-container {
+  min-height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+}
+
+.plan-nut-content {
+    padding: 2%;
+    width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Header */
+.plan-nut-header {
+  margin-bottom: 8px;
+}
+
+.plan-nut-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #121417;
+  margin: 0 0 8px 0;
+}
+
+.plan-nut-patient-info {
+  color: #667582;
+  margin: 0;
+}
+
+/* Sections */
+.plan-nut-section {
+  margin-bottom: 16px;
+}
+
+.plan-nut-section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #121417;
+  margin: 0 0 16px 0;
+}
+
+.plan-nut-section-text {
+  color: #121417;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Plan Details */
+.plan-nut-plan-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+.plan-nut-detail-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.plan-nut-detail-label {
+  color: #667582;
+  font-size: 14px;
+  margin: 0 0 4px 0;
+}
+
+.plan-nut-detail-value {
+  color: #121417;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Tabs */
+.plan-nut-tabs {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.plan-nut-tab-button {
+  background: none;
+  border: none;
+  font-weight: 500;
+  padding: 0 0 8px 0;
+  cursor: pointer;
+  color: #667582;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.plan-nut-tab-button.active {
+  color: #121417;
+  border-bottom-color: #121417;
+}
+
+.plan-nut-tab-button:hover {
+  color: #121417;
+}
+
+/* Table */
+.plan-nut-table-card {
+  border: 1px solid #dee0e3;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.plan-nut-meal-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.plan-nut-table-header {
+  background-color: #f2f2f5;
+  border-bottom: 1px solid #dee0e3;
+}
+
+.plan-nut-table-header-cell {
+  text-align: left;
+  padding: 16px;
+  color: #121417;
+  font-weight: 500;
+  border: none;
+}
+
+.plan-nut-table-row {
+  border-bottom: 1px solid #dee0e3;
+}
+
+.plan-nut-table-row:last-child {
+  border-bottom: none;
+}
+
+.plan-nut-table-cell {
+  padding: 16px;
+  border: none;
+}
+
+.plan-nut-meal-name {
+  color: #121417;
+  font-weight: 400;
+}
+
+.plan-nut-food-item,
+.plan-nut-quantity {
+  color: #667582;
+}
+
+/* Notes Textarea */
+.plan-nut-notes-textarea {
+  width: 100%;
+  min-height: 120px;
+  border: 1px solid #dee0e3;
+  border-radius: 6px;
+  padding: 12px;
+  font-family: inherit;
+  font-size: 14px;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.plan-nut-notes-textarea:focus {
+  border-color: #338ff2;
+  box-shadow: 0 0 0 2px rgba(51, 143, 242, 0.1);
+}
+
+/* Action Buttons */
+.plan-nut-action-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.plan-nut-btn-primary {
+  background-color: #338ff2;
+  color: white;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.plan-nut-btn-primary:hover {
+  background-color: #2980d9;
+}
+
+.plan-nut-btn-secondary {
+  background-color: transparent;
+  color: #121417;
+  border: 1px solid #dee0e3;
+  padding: 8px 24px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.plan-nut-btn-secondary:hover {
+  background-color: #f2f2f5;
+}
+
+/* Comments */
+.plan-nut-comments {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.plan-nut-comment {
+  display: flex;
+  gap: 12px;
+}
+
+.plan-nut-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.plan-nut-avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.plan-nut-comment-content {
+  flex: 1;
+}
+
+.plan-nut-comment-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.plan-nut-comment-author {
+  font-weight: 500;
+  color: #121417;
+}
+
+.plan-nut-comment-date {
+  color: #667582;
+  font-size: 14px;
+}
+
+.plan-nut-comment-text {
+  color: #121417;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .plan-nut-container {
+    padding: 16px;
+  }
+  
+  .plan-nut-content {
+    gap: 24px;
+  }
+  
+  .plan-nut-title {
+    font-size: 24px;
+  }
+  
+  .plan-nut-plan-details-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .plan-nut-action-buttons {
+    flex-direction: column;
+  }
+  
+  .plan-nut-btn-primary,
+  .plan-nut-btn-secondary {
+    width: 100%;
+  }
+  
+  .plan-nut-table-card {
+    overflow-x: auto;
+  }
+  
+  .plan-nut-meal-table {
+    min-width: 600px;
+  }
+}
+
+@media (max-width: 480px) {
+  .plan-nut-tabs {
+    gap: 16px;
+  }
+  
+  .plan-nut-table-header-cell,
+  .plan-nut-table-cell {
+    padding: 12px;
+    font-size: 14px;
+  }
+  
+  .plan-nut-comment {
+    gap: 8px;
+  }
+  
+  .plan-nut-avatar {
+    width: 32px;
+    height: 32px;
+  }
+}

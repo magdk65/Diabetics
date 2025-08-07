@@ -1,0 +1,182 @@
+.T-container {
+  min-height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+}
+
+.T-content {
+    width: 100%;
+    padding: 2%;
+}
+
+.T-breadcrumb {
+  margin-bottom: 32px;
+}
+
+.T-breadcrumb span {
+  color: #61758a;
+  font-size: 14px;
+}
+
+.T-main-heading {
+  color: #121417;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 32px;
+  margin-top: 0;
+}
+
+.T-section {
+  margin-bottom: 32px;
+}
+
+.T-section-heading {
+  color: #121417;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.T-subsection-heading {
+  color: #121417;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.T-form-group {
+  margin-bottom: 16px;
+}
+
+.T-label {
+  color: #121417;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.T-textarea {
+  min-height: 120px;
+  border: 1px solid #dbe0e5;
+  background-color: #ffffff;
+  resize: none;
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.T-textarea:focus {
+  outline: none;
+  border-color: #338ff2;
+  box-shadow: 0 0 0 2px rgba(51, 143, 242, 0.1);
+}
+
+.T-table-container {
+  border: 1px solid #dbe0e5;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.T-medication-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.T-table-header {
+  background-color: #e5e8eb;
+}
+
+.T-table-header th {
+  color: #121417;
+  font-weight: 500;
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #dbe0e5;
+}
+
+.T-table-row {
+  border-bottom: 1px solid #dbe0e5;
+}
+
+.T-table-row:last-child {
+  border-bottom: none;
+}
+
+.T-input-field {
+  border: 1px solid #dbe0e5;
+  background-color: #ffffff;
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.T-input-field::placeholder {
+  color: #61758a;
+}
+
+.T-input-field:focus {
+  outline: none;
+  border-color: #338ff2;
+  box-shadow: 0 0 0 2px rgba(51, 143, 242, 0.1);
+}
+
+.T-form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.T-button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.T-save-button {
+  background-color: #338ff2;
+  color: white;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.T-save-button:hover {
+  background-color: #2980d9;
+}
+
+.T-save-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(51, 143, 242, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .T-container {
+    padding: 16px;
+  }
+
+  .T-main-heading {
+    font-size: 24px;
+  }
+
+  .T-medication-table {
+    font-size: 14px;
+  }
+
+  .T-table-header th,
+  .T-table-cell {
+    padding: 8px 12px;
+  }
+}

@@ -1,0 +1,122 @@
+.D_Sett-container {
+  width: 100%;
+  display: flex;
+  background: #fff;
+  font-family: sans-serif;
+}
+
+.flex-sett {
+  width: 100%;
+  padding: 2%;
+}
+
+.D_Sett-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #121417;
+}
+
+.D_Sett-section {
+  margin-bottom: 2rem;
+}
+
+.D_Sett-subtitle {
+  font-size: 18px;
+  margin-bottom: 1rem;
+  color: #121417;
+}
+
+.D_Sett-label {
+  display: block;
+  margin-bottom: 1rem;
+  color: #6b7582;
+}
+
+.D_Sett-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.D_Sett-button {
+  margin-top: 1rem;
+  background-color: #5e91c9;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.D_Sett-button:hover {
+  background-color: #4a7bb0;
+}
+
+.D_Sett-message {
+  margin-top: 1rem;
+  color: green;
+  font-weight: 500;
+}
+
+/* Toggle Switch Styles */
+
+.D_Sett-notifications {
+  margin-top: 2rem;
+}
+
+.D_Sett-toggle-switch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  color: #121417;
+  font-weight: 500;
+  user-select: none;
+  position: relative;
+}
+
+/* أخفي الـ checkbox الأصلي */
+.D_Sett-toggle-switch input[type="checkbox"] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+/* شكل الفلب (slider) */
+.D_Sett-slider {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  background-color: #ccc;
+  border-radius: 24px;
+  transition: background-color 0.3s;
+}
+
+/* الدائرة المتحركة */
+.D_Sett-slider::before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+/* حالة الـ checked */
+.D_Sett-toggle-switch input:checked + .D_Sett-slider {
+  background-color: #121417;
+}
+
+.D_Sett-toggle-switch input:checked + .D_Sett-slider::before {
+  transform: translateX(20px);
+}

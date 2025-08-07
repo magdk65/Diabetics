@@ -1,0 +1,544 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background-color: #ffffff;
+}
+
+.dashboard-container-dash-p {
+  min-height: 100vh;
+  display: flex;
+}
+.flex-dashboard-ppp{
+    width: 100%;
+    padding: 2%;
+}
+.card-patient-info-hh{
+    display: flex;
+    padding:1%;
+}
+/* Sidebar Styles */
+.sidebar {
+  width: 256px;
+  background-color: #ffffff;
+  border-right: 1px solid #e5e8eb;
+}
+
+.sidebar-header {
+  padding: 24px;
+}
+
+.doctor-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.doctor-avatar {
+  width: 32px;
+  height: 32px;
+  background-color: #338ff2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.doctor-name {
+  font-weight: 600;
+  color: #121417;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 12px 16px;
+  background: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: left;
+  transition: background-color 0.2s;
+}
+
+.nav-item:hover {
+  background-color: #f0f2f5;
+}
+
+.nav-item.active {
+  background-color: #e5e8eb;
+  color: #121417;
+}
+
+.nav-item:not(.active) {
+  color: #61758a;
+}
+
+.nav-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 12px;
+}
+
+/* Main Content */
+.main-content-hh {
+    width: 100%;
+}
+.tab-content-hhh{
+    margin: 0;
+    width: 100%;
+}
+.content-wrapper-hh {
+    width: 100%;
+}
+
+.page-header {
+  margin-bottom: 24px;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #121417;
+  margin-bottom: 4px;
+}
+
+.page-subtitle {
+  color: #61758a;
+}
+
+/* Card Styles */
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e5e8eb;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.card-header {
+  padding: 24px 24px 0 24px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #121417;
+  margin-bottom: 16px;
+}
+
+.card-content--h {
+  display: flex;
+}
+.card-content-h{
+    display: flex;
+    padding: 10px;
+}
+
+/* Patient Info */
+.patient-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.patient-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.patient-details{
+    margin: 0px 10px;
+}
+.patient-details h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #121417;
+  margin-bottom: 4px;
+}
+
+.patient-details p {
+  color: #61758a;
+  margin-bottom: 2px;
+}
+
+/* Tabs */
+
+.tabs-list-hh {
+  display: flex;
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.tab-trigger {
+  padding: 8px 16px;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.tab-trigger.active {
+  background-color: #338ff2;
+  color: white;
+}
+
+.tab-trigger:not(.active) {
+  color: #61758a;
+}
+
+/* Patient Data Grid */
+.patient-data-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 1024px) {
+  .patient-data-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.metric-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.metric-title {
+  font-weight: 600;
+  color: #121417;
+  margin-bottom: 8px;
+}
+
+.metric-value {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.metric-number {
+  font-size: 24px;
+  font-weight: 700;
+  color: #121417;
+}
+
+.badge {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.badge.positive {
+  background-color: #088738;
+  color: white;
+}
+
+.badge.negative {
+  background-color: #e83808;
+  color: white;
+}
+
+.metric-period {
+  font-size: 12px;
+  color: #61758a;
+}
+
+/* Chart Placeholder */
+.chart-placeholder {
+  height: 128px;
+  background-color: #f0f2f5;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #61758a;
+  margin-bottom: 8px;
+}
+
+.chart-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #61758a;
+}
+
+/* Activity Section */
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.activity-label {
+  font-size: 14px;
+  color: #61758a;
+  width: 80px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 8px;
+  background-color: #e5e8eb;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #338ff2;
+  transition: width 0.3s ease;
+}
+
+/* Calendar Grid */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 1024px) {
+  .calendar-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.calendar-title {
+  font-weight: 600;
+  color: #121417;
+}
+
+.calendar-nav {
+  display: flex;
+  gap: 4px;
+}
+
+.calendar-nav-btn {
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #61758a;
+}
+
+.calendar-nav-btn:hover {
+  background-color: #f0f2f5;
+}
+
+.calendar {
+  width: 100%;
+}
+
+.calendar-month {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.calendar-day:hover {
+  background-color: #f0f2f5;
+}
+
+.calendar-day.selected {
+  background-color: #338ff2;
+  color: white;
+}
+
+.calendar-day.other-month {
+  color: #dbe0e5;
+}
+
+/* Table */
+.table {
+      border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.table th{
+    background-color: #f8f9fa;
+}
+.table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e5e8eb;
+}
+
+.table th {
+  color: #61758a;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.table td {
+  color: #121417;
+}
+
+.table-link {
+  color: #338ff2;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.table-link:hover {
+  text-decoration: underline;
+}
+.plan-section{
+    width: 100%;
+    padding: 20px 10px;
+}
+.card-content-plan{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Status Badges */
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-badge.scheduled {
+  background-color: #dbe0e5;
+  color: #121417;
+}
+
+.status-badge.completed {
+  background-color: #088738;
+  color: white;
+}
+
+/* Notes Section */
+.notes-placeholder {
+  height: 80px;
+  border: 2px dashed #dbe0e5;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #61758a;
+}
+
+/* Treatment Plans */
+.treatment-plans {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.treatment-plan {
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e5e8eb;
+}
+
+.treatment-plan:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.treatment-plan h3 {
+  font-weight: 600;
+  color: #121417;
+  margin-bottom: 8px;
+}
+
+.treatment-plan p {
+  color: #61758a;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-outline {
+  background: none;
+  border: 1px solid #dbe0e5;
+  color: #338ff2;
+}
+
+.btn-outline:hover {
+  background-color: #f0f2f5;
+}
+
+.btn-primary {
+  background-color: #338ff2;
+  border: 1px solid #338ff2;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #2563eb;
+}
+
+.header-with-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}

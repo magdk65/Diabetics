@@ -1,0 +1,290 @@
+/* Main Container */
+.plan-coach-container {
+  min-height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+}
+
+.plan-coach-wrapper {
+    width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 2%;
+}
+
+/* Header Section */
+.plan-coach-header-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.plan-coach-main-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #121417;
+  margin: 0;
+}
+
+.plan-coach-subtitle {
+  font-size: 14px;
+  color: #61758a;
+  margin: 0;
+}
+
+/* Card Component */
+.plan-coach-card {
+  border: 1px solid #dbe0e5;
+  border-radius: 8px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.plan-coach-card-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid #dbe0e5;
+}
+
+.plan-coach-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #121417;
+  margin: 0;
+}
+
+.plan-coach-card-content {
+  padding: 24px;
+}
+
+/* Table Styles */
+.plan-coach-table-container {
+  overflow-x: auto;
+}
+
+.plan-coach-exercise-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.plan-coach-table-header {
+  background-color: #f0f2f5;
+  border-bottom: 1px solid #dbe0e5;
+}
+
+.plan-coach-header-cell {
+  text-align: left;
+  padding: 16px;
+  font-weight: 500;
+  color: #121417;
+  font-size: 14px;
+}
+
+.plan-coach-table-row {
+  border-bottom: 1px solid #e5e8eb;
+}
+
+.plan-coach-table-row:last-child {
+  border-bottom: none;
+}
+
+.plan-coach-table-cell {
+  padding: 16px;
+  color: #121417;
+  font-size: 14px;
+  vertical-align: top;
+}
+
+.plan-coach-frequency,
+.plan-coach-instructions {
+  color: #61758a;
+}
+
+/* Collaboration Textarea */
+.plan-coach-collaboration-textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px;
+  border: 1px solid #dbe0e5;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  resize: none;
+  outline: none;
+}
+
+.plan-coach-collaboration-textarea:focus {
+  border-color: #338ff2;
+  box-shadow: 0 0 0 2px rgba(51, 143, 242, 0.1);
+}
+
+.plan-coach-collaboration-textarea::placeholder {
+  color: #61758a;
+}
+
+/* Button Styles */
+.plan-coach-button-group {
+  display: flex;
+  gap: 16px;
+}
+
+.plan-coach-btn {
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.plan-coach-btn-primary {
+  background-color: #338ff2;
+  color: #ffffff;
+}
+
+.plan-coach-btn-primary:hover {
+  background-color: #2980d9;
+}
+
+.plan-coach-btn-secondary {
+  background-color: transparent;
+  color: #61758a;
+  border: 1px solid #dbe0e5;
+}
+
+.plan-coach-btn-secondary:hover {
+  background-color: #f0f2f5;
+}
+
+/* Comment Log */
+.plan-coach-comment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.plan-coach-comment-item {
+  display: flex;
+  gap: 12px;
+}
+
+.plan-coach-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #e5e8eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.plan-coach-avatar-text {
+  font-size: 12px;
+  color: #61758a;
+  font-weight: 500;
+}
+
+.plan-coach-comment-content {
+  flex: 1;
+}
+
+.plan-coach-comment-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.plan-coach-comment-author {
+  font-weight: 500;
+  color: #121417;
+  font-size: 14px;
+}
+
+.plan-coach-comment-date {
+  font-size: 12px;
+  color: #61758a;
+}
+
+.plan-coach-comment-text {
+  font-size: 14px;
+  color: #121417;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Suggestion Card */
+.plan-coach-suggestion-card {
+  border-color: #338ff2;
+  background-color: #f0f8ff;
+}
+
+.plan-coach-suggestion-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.plan-coach-suggestion-text {
+  flex: 1;
+}
+
+.plan-coach-suggestion-title {
+  font-weight: 500;
+  color: #121417;
+  margin: 0 0 4px 0;
+  font-size: 16px;
+}
+
+.plan-coach-suggestion-description {
+  font-size: 14px;
+  color: #61758a;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .plan-coach-container {
+    padding: 16px;
+  }
+  
+  .plan-coach-wrapper {
+    gap: 16px;
+  }
+  
+  .plan-coach-card-content {
+    padding: 16px;
+  }
+  
+  .plan-coach-table-cell,
+  .plan-coach-header-cell {
+    padding: 12px 8px;
+    font-size: 13px;
+  }
+  
+  .plan-coach-button-group {
+    flex-direction: column;
+  }
+  
+  .plan-coach-suggestion-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .plan-coach-main-title {
+    font-size: 20px;
+  }
+  
+  .plan-coach-subtitle {
+    font-size: 12px;
+  }
+  
+  .plan-coach-table-container {
+    font-size: 12px;
+  }
+}

@@ -54,6 +54,12 @@ import Dr_Dashboard from './components/Doctor/Dr_Dashboard/Dr_Dashboard';
 import PatientList from './components/Doctor/PatientList/PatientList';
 import AppointmentScheduler from './components/Doctor/AppointmentScheduler/AppointmentScheduler';
 import AppointmentsDashboard from './components/Doctor/AppointmentsDashboard/AppointmentsDashboard';
+import PatientDashboard from './components/Doctor/PatientDashboard_Data/PatientDashboard';
+import MedicationForm from './components/Doctor/MedicationForm/MedicationForm';
+import TreatmentPlan from './components/Doctor/TreatmentPlan/TreatmentPlan';
+import NutritionalPlan from './components/Doctor/NutritionalPlan/NutritionalPlan';
+import ExercisePlan from './components/Doctor/ExercisePlan/ExercisePlan';
+import Doctor_Setting from './components/Doctor/Doctor_Setting/Doctor_Setting';
 
 
 function App() {
@@ -84,7 +90,12 @@ function App() {
         <Route path='/PatientList' element={<PatientList/>}/>
         <Route path='/Appointment' element={<AppointmentScheduler/>}/>
         <Route path='/AppointmentsDashboard' element={<AppointmentsDashboard/>}/>
-
+        <Route path='/pat' element={<PatientDashboard/>}/>
+        <Route path='/MedicationForm' element={<MedicationForm/>}/>
+        <Route path='/TreatmentPlan'element={<TreatmentPlan/>}/>
+        <Route path='/ViewNutritionalPlan' element={<NutritionalPlan/>}/>
+        <Route path='/ViewExercisePlan1' element={<ExercisePlan/>}/>
+        <Route path='/Doctor_Setting' element={<Doctor_Setting/>}/>
 
         <Route path='/dashboard_child' element={<DiabetesDashboard_Child/>}/>
         <Route path='/bloodsugarlogger' element={<BloodSugarLogger/>}/>
