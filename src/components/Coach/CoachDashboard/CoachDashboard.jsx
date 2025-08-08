@@ -1,3 +1,4 @@
+// CoachDashboard.jsx
 import React, { useState } from 'react';
 import {
   LineChart,
@@ -5,26 +6,57 @@ import {
   XAxis,
   Tooltip,
   ResponsiveContainer,
-  BarChart,
-  Bar,
-  Cell,
 } from 'recharts';
+import { useParams, Link } from 'react-router-dom';
+import {
+  Home,
+  User,
+  Mail,
+  Settings,
+} from 'lucide-react';
 import './CoachDashboard.css';
-import Sidebar from '../Sidbar/Sidbar';
+import Sidbar from '../Sidbar/Sidbar';
+
+const Sidebar = ({ CoachID }) => {
+  const navItems = [
+    { id: "dashboard", label: "Dashboard", icon: Home, path: `/dashboardcoach/${CoachID}` },
+    { id: "profile", label: "Profile Player", icon: User, path: `/profileplayer/${CoachID}` },
+    { id: "messages", label: "Messages", icon: Mail, path: `/chat/${CoachID}` },
+    { id: "settings", label: "Settings", icon: Settings, path: `/setting/${CoachID}` },
+  ];
+
+  return (
+    <nav className="sidebar">
+      <ul>
+        {navItems.map(({ id, label, icon: Icon, path }) => (
+          <li key={id}>
+            <Link to={path} className="sidebar-link">
+              <Icon size={20} style={{ marginRight: 8 }} />
+              {label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
 
 const CoachDashboard = () => {
-  const [overviewData, setOverviewData] = useState({
+  // استخراج المعرف من رابط الصفحة
+  const { CoachID } = useParams();
+
+  const [overviewData] = useState({
     totalPatients: 250,
     activePlans: 125,
     avgPlanAdherence: 85,
   });
 
-  const [alerts, setAlerts] = useState([
+  const [alerts] = useState([
     { id: 1, text: 'Patients Inactive for 30+ Days', number: 15 },
     { id: 2, text: 'Doctor Notes on Exercise Plans', number: 3 },
   ]);
 
-  const [patientActivities, setPatientActivities] = useState([
+  const [patientActivities] = useState([
     { id: 1, patient: 'Clara Bennett', exercise: 'Walking', duration: '30 minutes', date: '2024-01-15' },
     { id: 2, patient: 'Sophia Bennett', exercise: 'Cycling', duration: '45 minutes', date: '2024-01-14' },
     { id: 3, patient: 'Oliver Hayes', exercise: 'Swimming', duration: '60 minutes', date: '2024-01-13' },
@@ -32,7 +64,6 @@ const CoachDashboard = () => {
     { id: 5, patient: 'Jackson Reed', exercise: 'Running', duration: '40 minutes', date: '2024-01-11' },
   ]);
 
-  // بيانات الرسم البياني - مثال بيانات أسبوعية
   const lineChartData = [
     { day: 'Mon', adherence: 60 },
     { day: 'Tue', adherence: 75 },
@@ -43,7 +74,7 @@ const CoachDashboard = () => {
     { day: 'Sun', adherence: 90 },
   ];
 
-  const [progressData, setProgressData] = useState({
+  const [progressData] = useState({
     planAdherenceRate: 85,
     planAdherenceChange: 5,
     activityVsGoals: 75,
@@ -57,12 +88,14 @@ const CoachDashboard = () => {
 
   return (
     <div className="coach-das-dashboard-container">
-        <Sidebar/>
+      {/* Sidebar مع تمرير المعرف */}
+      <Sidbar CoachID={CoachID} />
+
       <div className="coach-das-main-content">
         <div className="coach-das-content-wrapper">
           {/* Header */}
           <div className="coach-das-header">
-            <h1 className="coach-das-main-title">Coach Dashboard</h1>
+            <h1 className="coach-das-main-title">Coach Dashboard (ID: {CoachID})</h1>
             <h2 className="coach-das-section-title">Overview</h2>
           </div>
 

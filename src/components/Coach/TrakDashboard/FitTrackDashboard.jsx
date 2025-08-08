@@ -1,32 +1,31 @@
 import React, { useState, useEffect } from "react";
-import '../TrakDashboard/FitTrackDashboard.css'
+import { useParams, useNavigate } from "react-router-dom"; // إضافة useNavigate
+import '../TrakDashboard/FitTrackDashboard.css';
 import ActivityCard from "./ActivityCard";
 import Sidebar from "../Sidbar/Sidbar";
 
 const FitTrackDashboard = () => {
-  // بيانات المريض من الباك
-  const [patient, setPatient] = useState({ name: "Sophia Carter", id: 1 });
+  const { coachId, id } = useParams(); // استخراج coachId و id
+  const navigate = useNavigate(); // إنشاء دالة التنقل
 
-  // تبويب نشط
+  const [patient, setPatient] = useState({ name: "Loading...", id });
   const [activeTab, setActiveTab] = useState("activity");
-
-  // Activity Summary
   const [activitySummary, setActivitySummary] = useState({
     steps: 0,
     goalCompletion: 0,
     workouts: 0,
   });
-
-  // بيانات الرسوميات
   const [dailyStepsData, setDailyStepsData] = useState([]);
   const [goalComparisonData, setGoalComparisonData] = useState([]);
   const [activityLog, setActivityLog] = useState([]);
-
-  // ملاحظات
   const [note, setNote] = useState("");
 
   useEffect(() => {
-    // محاكاة جلب البيانات من الباك
+    // جلب بيانات المريض (محاكاة)
+    setPatient({
+      id: id, // مهم حتى نستخدمه في الرابط
+    });
+
     setActivitySummary({
       steps: 7200,
       goalCompletion: 85,
@@ -58,19 +57,18 @@ const FitTrackDashboard = () => {
       { time: "Yesterday, 6:00 PM", type: "Strength Training" },
       { time: "2 Days Ago, 8:00 AM", type: "Yoga Session" },
     ]);
-  }, []);
+  }, [id]);
 
   const handleModifyPlan = () => {
-    window.location.href = `/coach/${patient.id}/modify-plan`; // رابط تعديل الخطة
+    navigate(`/patients/coach/${coachId}/Profile_Pat/${patient.id}`);
   };
 
   return (
     <div className="ft-dashboard">
       <div className="ft-main-content">
-        <Sidebar />
+        <Sidebar CoachID={coachId} />
         <div className="felx-dashboard-pc">
 
-          {/* Profile Header */}
           <div className="ft-profile-header">
             <h1 className="ft-profile-title">{patient.name}</h1>
             <button className="ft-modify-btn" onClick={handleModifyPlan}>
@@ -78,7 +76,6 @@ const FitTrackDashboard = () => {
             </button>
           </div>
 
-          {/* Tabs */}
           <div className="ft-tab-nav">
             <button
               className={`ft-tab-btn ${activeTab === "activity" ? "active" : "inactive"}`}
@@ -100,7 +97,6 @@ const FitTrackDashboard = () => {
             </button>
           </div>
 
-          {/* محتوى التبويبات */}
           {activeTab === "activity" && (
             <ActivityCard
               activitySummary={activitySummary}

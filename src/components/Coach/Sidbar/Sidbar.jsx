@@ -1,53 +1,57 @@
 import React, { useState, useEffect } from "react";
 import {
+  Calendar,
+  FileText,
   Home,
-  User,
-  Dumbbell, // أيقونة تمارين (lucide-react توفرها)
   Mail,
   Settings,
+  LogOut,
   Menu,
+  User,
+  Dumbbell,
 } from "lucide-react";
-import '../Sidbar/Sidbar.css'
 import { Link, useLocation } from "react-router-dom";
+import '../Sidbar/Sidbar.css'
 
-const Sidebar = ({ CoachID, onItemClick }) => {
+const Sidbar = ({ CoachID, onItemClick }) => {
   const location = useLocation();
   const [collapsed, setCollapsed] = useState(true);
-  const [doctorData, setDoctorData] = useState({
+  const [coachData, setCoachData] = useState({
     name: "",
     specialty: "",
     imageUrl: "",
   });
 
   useEffect(() => {
-    async function fetchDoctorData() {
+    async function fetchCoachData() {
       try {
-        const response = await fetch("/api/doctor-profile");
+        const response = await fetch("/api/coach-profile");
         const data = await response.json();
-        setDoctorData({
+        setCoachData({
           name: data.name,
           specialty: data.specialty,
           imageUrl: data.imageUrl,
         });
       } catch (error) {
-        console.error("Error fetching doctor data:", error);
+        console.error("Error fetching coach data:", error);
       }
     }
-    fetchDoctorData();
+    fetchCoachData();
   }, []);
 
   const toggleSidebar = () => {
     setCollapsed(!collapsed);
   };
 
-  const doctorIdValue = CoachID || "123";
+  const coachIdValue = CoachID || "123";
 
-const navItems = [
-  { id: "dashboard", label: "Dashboard", icon: Home, path: `/CoachDashboard/${CoachID}` },
-{ id: "patients", label: "Patients", icon: User, path: `/dashboardcoach/${CoachID}` },
-  { id: "exercises", label: "Exercises", icon: Dumbbell, path: `/q/${CoachID}` },
-  { id: "messages", label: "Messages", icon: Mail, path: `/Chat/${CoachID}` },
-  { id: "settings", label: "Settings", icon: Settings, path: `/Setting/${CoachID}` },
+  const navItems = [
+  { id: "dashboard", label: "Dashboard", icon: Home, path: `/dashboard/coach/${coachIdValue}` },
+  { id: "patients", label: "Patients", icon: User, path: `/patients/coach/${coachIdValue}` },
+  { id: "exercises", label: "Exercises", icon: Dumbbell, path: `/exercises/coach/${coachIdValue}` },
+  { id: "messages", label: "Messages", icon: Mail, path: `/messages/coach/${coachIdValue}` },
+  { id: "settings", label: "Settings", icon: Settings, path: `/settings/coach/${coachIdValue}` },
+  { id: "logout", label: "Logout", icon: LogOut, path: `/login` },
 ];
 
 
@@ -60,10 +64,10 @@ const navItems = [
       {!collapsed && (
         <div className="user-profile-NU">
           <div className="avatar-NU">
-            {doctorData.imageUrl ? (
+            {coachData.imageUrl ? (
               <img
-                src={doctorData.imageUrl}
-                alt="Doctor Avatar"
+                src={coachData.imageUrl}
+                alt="Coach Avatar"
                 className="avatar-img"
               />
             ) : (
@@ -71,8 +75,8 @@ const navItems = [
             )}
           </div>
           <div className="user-info-NU">
-            <h3>{doctorData.name || "Loading..."}</h3>
-            <p>{doctorData.specialty || "..."}</p>
+            <h3>{coachData.name || "Loading..."}</h3>
+            <p>{coachData.specialty || "..."}</p>
           </div>
         </div>
       )}
@@ -96,4 +100,4 @@ const navItems = [
   );
 };
 
-export default Sidebar;
+export default Sidbar;

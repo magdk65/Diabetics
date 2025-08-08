@@ -1,0 +1,147 @@
+/* General Layout */
+.Admin3-app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #ffffff; /* very light gray */
+  font-family: sans-serif; /* Default font */
+  padding: 24px;
+}
+
+/* Main Content Header */
+.Admin3-content-header {
+  background-color: white;
+  border-bottom: 1px solid #e5e8eb;
+}
+
+.Admin3-page-title {
+  font-size: 30px; /* text-3xl */
+  font-weight: 700; /* font-bold */
+  color: #121417; /* dark */
+  margin-bottom: 32px;
+}
+
+/* Tabs */
+.Admin3-tabs-container {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.Admin3-tab-button {
+  background-color: transparent;
+  border: none;
+  padding-bottom: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #61758a; /* blue-gray */
+}
+
+.Admin3-tab-button.Admin3-active {
+  color: #121417; /* dark */
+  border-bottom: 2px solid #121417;
+}
+
+/* Open Tickets Section */
+.Admin3-section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #121417;
+  margin-bottom: 24px;
+}
+
+.Admin3-table-container {
+  background-color: white;
+  border: 1px solid #e5e8eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.Admin3-tickets-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.Admin3-table-header-row {
+  background-color: #f0f2f5;
+}
+
+.Admin3-table-head {
+  padding: 16px;
+  text-align: left;
+  color: #61758a;
+  font-weight: 500;
+}
+
+.Admin3-table-row {
+  border-bottom: 1px solid #e5e8eb;
+}
+
+.Admin3-table-row:last-child {
+  border-bottom: none;
+}
+
+.Admin3-table-cell {
+  padding: 16px;
+  color: #61758a;
+}
+
+.Admin3-font-medium {
+  font-weight: 500;
+  color: #121417;
+}
+
+/* Badges */
+.Admin3-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.Admin3-badge-status {
+  background-color: #dbe0e5;
+  color: #121417;
+}
+
+.Admin3-badge-critical {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.Admin3-badge-high {
+  background-color: #fffbe6;
+  color: #9a3412;
+}
+
+.Admin3-badge-medium {
+  background-color: #fefce8;
+  color: #a16207;
+}
+
+.Admin3-badge-low {
+  background-color: #f0fdf4;
+  color: #166534;
+}
+
+/* Help Button Fixed Bottom Right */
+.Admin3-help-button {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}

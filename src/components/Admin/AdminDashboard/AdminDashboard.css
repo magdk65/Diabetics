@@ -1,0 +1,261 @@
+.admin-dashboard {
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding: 24px;
+}
+
+.admin-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Header Styles */
+.admin-header {
+  margin-bottom: 32px;
+}
+
+.admin-main-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #121417;
+  margin: 0;
+}
+
+/* Section Styles */
+.admin-statistics-section {
+  margin-bottom: 32px;
+}
+
+.admin-activity-log-section {
+  margin-bottom: 32px;
+}
+
+.admin-section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #121417;
+  margin: 0 0 24px 0;
+}
+
+/* Main Stats Grid */
+.admin-main-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 1024px) {
+  .admin-main-stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Stat Card Styles */
+.admin-stat-card {
+  border: 1px solid #e5e8eb;
+  border-radius: 8px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.admin-card-header {
+  padding: 16px 16px 8px 16px;
+}
+
+.admin-card-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #121417;
+  margin: 0;
+}
+
+.admin-card-content {
+  padding: 0 16px 16px 16px;
+}
+
+.admin-stat-value {
+  font-size: 30px;
+  font-weight: bold;
+  color: #121417;
+  margin-bottom: 16px;
+}
+
+.admin-stat-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.admin-stat-period {
+  color: #61758a;
+}
+
+.admin-stat-change.positive {
+  color: #088738;
+  font-weight: 500;
+}
+
+/* Chart Styles */
+.admin-chart-container {
+  height: 128px;
+  display: flex;
+  align-items: end;
+  padding-top: 16px;
+  margin-bottom: 8px;
+}
+
+.admin-bar-chart-container {
+  height: 128px;
+  display: flex;
+  align-items: end;
+  padding-top: 16px;
+  margin-bottom: 8px;
+}
+
+/* Metric Cards Grid */
+.admin-metric-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .admin-metric-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.admin-metric-card {
+  background-color: #f0f2f5;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.admin-metric-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #121417;
+  margin-bottom: 8px;
+}
+
+.admin-metric-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #121417;
+  margin-bottom: 8px;
+}
+
+.admin-metric-change.positive {
+  font-size: 14px;
+  color: #088738;
+  font-weight: 500;
+}
+
+/* Filters */
+.admin-filters {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.admin-filter-select {
+  width: 160px;
+  padding: 8px 12px;
+  border: 1px solid #e5e8eb;
+  border-radius: 6px;
+  background-color: #ffffff;
+  font-size: 14px;
+  color: #121417;
+  cursor: pointer;
+}
+
+.admin-filter-select:focus {
+  outline: none;
+  border-color: #61758a;
+}
+
+/* Table Styles */
+.admin-table-container {
+  border: 1px solid #e5e8eb;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.admin-activity-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-activity-table th {
+  background-color: #ffffff;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 500;
+  color: #121417;
+  border-bottom: 1px solid #e5e8eb;
+}
+
+.admin-activity-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e8eb;
+}
+
+.admin-activity-table tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-user-name {
+  color: #121417;
+  font-weight: 500;
+}
+
+.admin-activity-desc {
+  color: #61758a;
+}
+
+.admin-timestamp {
+  color: #61758a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-dashboard {
+    padding: 16px;
+  }
+  
+  .admin-main-title {
+    font-size: 24px;
+  }
+  
+  .admin-filters {
+    flex-direction: column;
+  }
+  
+  .admin-filter-select {
+    width: 100%;
+  }
+  
+  .admin-activity-table {
+    font-size: 14px;
+  }
+  
+  .admin-activity-table th,
+  .admin-activity-table td {
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-stat-value {
+    font-size: 24px;
+  }
+  
+  .admin-metric-value {
+    font-size: 20px;
+  }
+}

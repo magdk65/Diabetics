@@ -62,6 +62,10 @@ import ExercisePlan from './components/Doctor/ExercisePlan/ExercisePlan';
 import Doctor_Setting from './components/Doctor/Doctor_Setting/Doctor_Setting';
 import Document_P from './components/Doctor/Document_P/Document_P';
 import CoachDashboard from './components/Coach/CoachDashboard/CoachDashboard';
+import AdminDashboard from './components/Admin/AdminDashboard/AdminDashboard';
+import Consultations from './components/Admin/Consultations/Consultations';
+import DiabCareAdmin from './components/Admin/DiabCareAdmin/DiabCareAdmin';
+import Survey from './components/Admin/Survey/Survey';
 
 
 function App() {
@@ -120,20 +124,22 @@ function App() {
         <Route path='/mealplandashboard' element={<MealPlanDashboard/>}/>
         <Route path='/nu_ndashboard' element={<NU_NDashboard/>}/>
 
-          {/* قسم المعدل*/}
-       
-        
-        {/** <Route path="/coach/:coachId/patient/:patientId/view" element={<ViewPatientPage />} />
-       <Route path="/coach/:coachId/patient/:patientId/edit" element={<EditPatientPage />} />
- */}   
-      
-      <Route path='/CoachDashboard/:CoachID'element={<CoachDashboard/>}/>
-       <Route path='/ProfilePleaer' element={<FitTrackDashboard/>}/>
-       <Route path='/q' element={<FitnessPlanner/>}/>
-       <Route path='/Setting/:CoachID' element={<SettingsContent/>}/>
-       <Route path='/Chat/:CoachID' element={<ChatApp/>}/>
-       <Route path='/chat/:id' element={<ChatApp/>}/>
 
+
+       <Route path='/chat/:id' element={<ChatApp/>}/>
+        <Route path='/patients/coach/:coachId/FitTrackDashboard/:id' element={<FitTrackDashboard/>}/>
+        <Route path="/dashboard/coach/:coachId" element={<CoachDashboard />} />
+        <Route path="/patients/coach/:coachId" element={<DashboardCoach />} />
+      {/*  <Route path="/exercises/coach/:coachId" element={<Exercises />} />*/}
+        <Route path="/messages/coach/:coachId" element={<ChatApp />} />
+        <Route path="/settings/coach/:coachId" element={<SettingsContent />} />
+        <Route path="/login" element={<HealthcareLogin />} />
+        <Route path="/patients/coach/:coachId/Profile_Pat/:id" element={<FitnessPlanner />} />
+
+       <Route path='/AdminDashboard' element={<AdminDashboard/>}/>
+       <Route path='/Consultations' element={<Consultations/>}/>
+       <Route path='/DiabCareAdmin' element={<DiabCareAdmin/>}/>
+       <Route path='/Survey' element={<Survey/>}/>
 
         <Route path="/nutritionist/:nutId/dashboard" element={<NutrDashboard />} />// 1. لوحة تحكم الأخصائي
         <Route path="/nutritionist/:nutId/patients" element={<PatientsListPage />} />// 2. قائمة المرضى للأخصائي
