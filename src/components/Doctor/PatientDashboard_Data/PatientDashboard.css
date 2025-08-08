@@ -125,31 +125,103 @@ body {
 
 /* Card Styles */
 .card {
-  background-color: #ffffff;
   border: 1px solid #e5e8eb;
-  border-radius: 8px;
-  margin-bottom: 24px;
+  border-radius: 10px;
+  background: #fff;
+  overflow: hidden;
+  margin-bottom: 16px;
+  padding: 16px;
 }
 
 .card-header {
-  padding: 24px 24px 0 24px;
+  margin-bottom: 12px;
 }
 
 .card-title {
   font-size: 18px;
-  font-weight: 600;
-  color: #121417;
-  margin-bottom: 16px;
+  font-weight: 700;
 }
 
-.card-content--h {
+.metric-header {
   display: flex;
-}
-.card-content-h{
-    display: flex;
-    padding: 10px;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  align-items: center;
 }
 
+.metric-value {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.positive {
+  background-color: #daf5d9;
+  color: #2f7a22;
+}
+
+.negative {
+  background-color: #f8d7da;
+  color: #a71d2a;
+}
+
+.metric-subtitle {
+  font-size: 14px;
+  color: #555;
+}
+
+.metric-subtitle .positive-change {
+  color: #2f7a22;
+}
+
+.metric-subtitle .negative-change {
+  color: #a71d2a;
+}
+
+/* ====== Activity List Styling ====== */
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.activity-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.activity-label {
+  font-weight: 600;
+  font-size: 14px;
+  width: 100px;
+}
+
+.activity-bar-wrapper {
+  flex: 1;
+  background: #f0f2f5;
+  border-radius: 12px;
+  height: 14px;
+  margin-left: 12px;
+  overflow: hidden;
+}
+
+.activity-bar-fill {
+  height: 100%;
+  background-color: #82ca9d;
+  border-radius: 12px 0 0 12px;
+  transition: width 0.3s ease;
+}
+.section-title-ppp2{
+ font-size: 1.2rem;
+}
 /* Patient Info */
 .patient-info {
   display: flex;
@@ -541,4 +613,198 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
+}
+.apptable-card {
+  border: 1px solid #e5e8eb;
+  border-radius: 10px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.apptable-title {
+  font-size: 13px;
+  color: #61758a;
+  font-weight: 600;
+  padding: 12px 16px 4px;
+}
+
+.apptable-tableWrap {
+  overflow-x: auto;
+}
+
+.apptable-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.apptable-table thead tr {
+  background: #f0f2f5;
+  color: #61758a;
+  text-align: left;
+  font-size: 12px;
+}
+
+.apptable-table th,
+.apptable-table td {
+  padding: 10px 16px;
+  border-bottom: 1px solid #e5e8eb;
+}
+
+.apptable-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.apptable-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.apptable-pillDark {
+  background: #f0f2f5;
+  color: #121417;
+}
+
+.apptable-pillMuted {
+  background: #f0f2f5;
+  color: #61758a;
+}
+
+.apptable-right {
+  text-align: right;
+}
+
+.apptable-linkBtn {
+  background: transparent;
+  border: 0;
+  color: #338ff2;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.apptable-linkBtn:hover {
+  text-decoration: underline;
+}
+
+.apptable-muted {
+  color: #757575;
+  font-size: 12px;
+}
+.cal-table-cal {
+  width: 40%;
+  border: 1px solid #e5e8eb;
+  border-radius: 10px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.cal-table-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+}
+
+.cal-table-navBtn {
+  border: 0;
+  background: transparent;
+  color: #61758a;
+  padding: 4px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cal-table-navBtn:hover {
+  background: #f0f2f5;
+}
+
+.cal-table-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0d141c;
+}
+
+.cal-table-grid {
+  border-top: 1px solid #e5e8eb;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.cal-table-label {
+  font-size: 10px;
+  color: #757575;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding-bottom: 2px;
+}
+
+.cal-table-cell {
+  aspect-ratio: 1 / 1;
+}
+
+.cal-table-day {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #121417;
+  cursor: pointer;
+}
+
+.cal-table-day:hover {
+  background: #f0f2f5;
+}
+
+.cal-table-daySelected {
+  background: #338ff2;
+  color: #fff;
+  font-weight: 600;
+}
+
+.cal-table-dayWithAppointment {
+  border: 2px solid #338ff2;
+  font-weight: 600;
+  border-radius: 999px;
+}
+.action-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 22px;
+}
+
+.button-pp {
+  padding: 12px 12px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.button-back-pp {
+  background: none;
+  color: #8a6166;
+}
+
+.button-back:hover {
+  background-color: #f5f0f2;
+}
+
+.button-confirm {
+  background-color: #617afa;
+  color: white;
+}
+
+.button-confirm:hover {
+  background-color: #5a6ef7;
 }

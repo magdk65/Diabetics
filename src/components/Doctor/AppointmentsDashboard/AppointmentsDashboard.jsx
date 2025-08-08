@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import Calendar from "react-calendar"; // npm install react-calendar
 import "react-calendar/dist/Calendar.css";
 import "./AppointmentsDashboard.css";
+import { useNavigate, useParams } from "react-router-dom";
+import SidebarCustom from "../SidebarCustom/SidebarCustom";
 
 export default function AppointmentsDashboard() {
+  const navigate = useNavigate();
+  const { doctorId } = useParams(); // ناخد الدوكتور ID من الرابط params
+
   // بيانات مواعيد افتراضية
   const [appointments, setAppointments] = useState([
     { date: "2025-08-06", time: "10:00 AM - 10:30 AM", patient: "Ethan Carter", status: "Confirmed", recurrence: "Weekly" },
@@ -15,31 +20,23 @@ export default function AppointmentsDashboard() {
   const [selectedDate, setSelectedDate] = useState(new Date("2025-08-06"));
   const [searchTerm, setSearchTerm] = useState("");
 
-  // تحويل التاريخ لصيغة yyyy-mm-dd
   const formatDate = (date) => date.toISOString().split("T")[0];
 
-  // فلترة المواعيد حسب اليوم والبحث
   const filteredAppointments = appointments.filter(
     (a) =>
       a.date === formatDate(selectedDate) &&
       a.patient.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // إضافة موعد جديد كمثال
+  // عند الضغط على إضافة موعد، ينقل لصفحة الجدولة مع رقم الطبيب
   const handleAddAppointment = () => {
-    const newAppointment = {
-      date: formatDate(selectedDate),
-      time: "02:00 PM - 02:30 PM",
-      patient: "New Patient",
-      status: "Confirmed",
-      recurrence: "None",
-    };
-    setAppointments((prev) => [...prev, newAppointment]);
+    navigate(`/doctor/${doctorId}/Appointment`);
   };
 
   return (
     <div className="ap-dashboard">
-      {/* Header */}
+      <SidebarCustom/>
+      <div className="flex-app-sc">
       <div className="ap-header">
         <h1>Appointments</h1>
         <button className="ap-btn-primary" onClick={handleAddAppointment}>
@@ -47,7 +44,6 @@ export default function AppointmentsDashboard() {
         </button>
       </div>
 
-      {/* Search */}
       <div className="ap-search-section">
         <div className="ap-search-container">
           <span className="ap-search-icon">🔍</span>
@@ -61,7 +57,6 @@ export default function AppointmentsDashboard() {
         </div>
       </div>
 
-      {/* Calendar */}
       <div className="ap-calendar-section">
         <h2>Select a Date</h2>
         <Calendar
@@ -72,7 +67,6 @@ export default function AppointmentsDashboard() {
         />
       </div>
 
-      {/* Appointments Table */}
       <div className="ap-appointments-section">
         <h2>Appointments for {formatDate(selectedDate)}</h2>
         <table className="ap-appointments-table">
@@ -115,6 +109,7 @@ export default function AppointmentsDashboard() {
             )}
           </tbody>
         </table>
+      </div>
       </div>
     </div>
   );

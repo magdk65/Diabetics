@@ -4,7 +4,6 @@ import Calendar from "react-calendar"; // npm install react-calendar
 import "react-calendar/dist/Calendar.css";
 import "../AppointmentScheduler/AppointmentScheduler.css";
 import SidebarCustom from "../SidebarCustom/SidebarCustom";
-
 const timeSlots = ["09:00 AM", "10:00 AM", "11:00 AM", "01:00 PM", "02:00 PM", "03:00 PM"];
 
 const defaultPatients = [

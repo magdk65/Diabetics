@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import axios from 'axios';
-import  '../TreatmentPlan/TreatmentPlan.css'
+import '../TreatmentPlan/TreatmentPlan.css';
 import SidebarCustom from '../SidebarCustom/SidebarCustom';
 
 const TreatmentPlan = () => {
   const navigate = useNavigate();
+  const { doctorId, patientId } = useParams();
   const location = useLocation();
 
-  const { patientName, patientId } = location.state || {};
+  const { patientName } = location.state || {};
 
   const [diagnosis, setDiagnosis] = useState('');
   const [medications, setMedications] = useState([
@@ -73,12 +74,14 @@ const TreatmentPlan = () => {
   };
 
   const handleAddMedication = () => {
-    navigate('/add-medication', { state: { patientId } });
+    navigate(`/doctor/${doctorId}/patients/${patientId}/add-medication`, {
+      state: { doctorId, patientId },
+    });
   };
 
   return (
     <div className="T-container">
-        <SidebarCustom/>
+      <SidebarCustom />
       <div className="T-content">
         <div className="T-breadcrumb">
           <span>Patients / Modify Plan</span>

@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useParams  } from "react-router-dom";
 import { Search, ArrowUpDown, Eye } from "lucide-react";
 import "../PatientList/PatientList.css";
 import SidebarCustom from "../SidebarCustom/SidebarCustom";
 
 const PatientList = () => {
   const navigate = useNavigate();
+   const { doctorId } = useParams();
+console.log("doctorId:", doctorId);
 
   const [patients, setPatients] = useState([
     { id: 1, name: "Sophia Clark", avatar: "/placeholder.svg?height=40&width=40", condition: "Managing hypertension and monitoring cholesterol levels.", metrics: "Blood Sugar: 110 mg/dL, Weight: 145 lbs", lastInteraction: "03/15/2024", status: "Stable" },
@@ -39,7 +41,7 @@ const PatientList = () => {
   });
 
   const handleViewProfile = (id) => {
-    navigate(`/patients/${id}`);
+    navigate(`/doctor/${doctorId}/patients/${id}`);
   };
 
   return (

@@ -1,64 +1,115 @@
-.sidebar-custom {
+/* Sidebar Styles */
+.sidebar1 {
   width: 320px;
-  background-color: #f2f2f5;
-  border-right: 1px solid #e5e8eb;
-  padding: 24px;
-  box-sizing: border-box;
+  background-color: #f0f2f5;
+  padding: 16px 24px;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  transition: width 0.3s ease;
 }
 
-.sidebar-header-custom {
-  margin-bottom: 32px;
+/* حالة التصغير */
+.sidebar1.collapsed {
+  width: 80px; /* فقط الأيقونات */
+  padding: 24px 12px;
 }
-
-.sidebar-title-custom {
-  color: #121217;
+.avatar-NU{
+  width: 40%;
+  display: flex;
+}
+.avatar-NU svg {
+  width: 75%;
+    height: 75%;
+    padding: 10px;
+}
+.avatar-NU img {
+  width: 75%;
+    height: 75%;
+    padding: 10px;
+}
+.user-info-NU{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+.user-info-NU h3{
   font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 4px;
 }
-
-.sidebar-subtitle-custom {
-  color: #696e82;
-  font-size: 14px;
+/* إخفاء نصوص اليوزر لما تكون مصغرة */
+.sidebar1.collapsed .user-profile {
+  display: none;
 }
-
-.nav-menu-custom {
+.user-profile-NU{
+  display: flex;
+  width: 100%;
+}
+/* Navigation Styles */
+.nav-menu {
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  flex-grow: 1;
 }
 
-.nav-button-custom {
-  width: 100%;
+.nav-item {
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 12px 16px;
-  border: none;
   border-radius: 8px;
-  background: transparent;
-  color: #696e82;
-  font-size: 14px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: background-color 0.2s;
+  text-decoration: none;
+  color: #666b87;
 }
 
-.nav-button-custom:hover {
-  background-color: #dedee3;
+.nav-item.active {
+  background-color: #dbdee5;
   color: #121217;
+  font-weight: 500;
 }
 
-.nav-button-custom.active-custom {
-  background-color: #dedee3;
-  color: #121217;
-  font-weight: 700;
+.nav-item:hover:not(.active) {
+  background-color: #e5e8eb;
 }
 
-.nav-icon-custom {
-  width: 20px;
-  height: 20px;
+.nav-icon {
+  width: 20px !important;
+  height: 20px !important;
+  flex-shrink: 0; /* يمنعها من التصغير */
+}
+
+/* زر التلت شخطات */
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #666b87;
+  cursor: pointer;
+  margin-bottom: 16px;
+  align-self: flex-start;
+  width: 100%;
+}
+
+/* Responsive Sidebar */
+@media (max-width: 768px) {
+  .sidebar1 {
+    width: 100%;
+    padding: 16px;
+  }
+  .sidebar1.collapsed{
+    width: 80px;
+    padding: 24px 0px;
+}
+}
+@media (max-width: 467px) {
+  .sidebar1 {
+    width: 100%;
+    padding: 16px;
+  }
+  .sidebar1.collapsed{
+    width: 80px;
+    padding: 24px 0px;
+}
+
 }

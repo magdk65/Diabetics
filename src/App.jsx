@@ -60,6 +60,8 @@ import TreatmentPlan from './components/Doctor/TreatmentPlan/TreatmentPlan';
 import NutritionalPlan from './components/Doctor/NutritionalPlan/NutritionalPlan';
 import ExercisePlan from './components/Doctor/ExercisePlan/ExercisePlan';
 import Doctor_Setting from './components/Doctor/Doctor_Setting/Doctor_Setting';
+import Document_P from './components/Doctor/Document_P/Document_P';
+import CoachDashboard from './components/Coach/CoachDashboard/CoachDashboard';
 
 
 function App() {
@@ -86,16 +88,22 @@ function App() {
         <Route path='/register' element={<HealthcareRegister/ >}/>
         <Route path='/register2' element={<HealthcareProviderRegister/>}/>
         <Route path='/login' element={<HealthcareLogin/>}/>
-        <Route path='/dr_dashobard' element={<Dr_Dashboard/>}/>
-        <Route path='/PatientList' element={<PatientList/>}/>
-        <Route path='/Appointment' element={<AppointmentScheduler/>}/>
-        <Route path='/AppointmentsDashboard' element={<AppointmentsDashboard/>}/>
-        <Route path='/pat' element={<PatientDashboard/>}/>
         <Route path='/MedicationForm' element={<MedicationForm/>}/>
-        <Route path='/TreatmentPlan'element={<TreatmentPlan/>}/>
-        <Route path='/ViewNutritionalPlan' element={<NutritionalPlan/>}/>
-        <Route path='/ViewExercisePlan1' element={<ExercisePlan/>}/>
-        <Route path='/Doctor_Setting' element={<Doctor_Setting/>}/>
+        <Route path="/doctor/:doctorId/patients/:patientId/add-medication" element={<MedicationForm />} />
+
+        <Route path="/doctor/:doctorId/dashboard" element={<Dr_Dashboard />} />
+        <Route path="/doctor/:doctorId/documents" element={<Document_P />} />
+        <Route path="/doctor/:doctorId/appointments" element={<AppointmentsDashboard />} />
+        <Route path='/doctor/:doctorId/Appointment' element={<AppointmentScheduler/>}/>
+        <Route path="/doctor/:doctorId/patients" element={<PatientList />} />
+        <Route path="/doctor/:doctorId/patients/:id" element={<PatientDashboard />} />
+        <Route path="/doctor/:doctorId/settings" element={<Doctor_Setting />} />
+        <Route path='/doctor/:doctorId/patients/:id/treatment-plan' element={<TreatmentPlan />} />
+        <Route path='/doctor/:doctorId/patients/:id/nutritional-plan' element={<NutritionalPlan />} />
+        <Route path='/doctor/:doctorId/patients/:id/exercise-plan' element={<ExercisePlan />} />
+
+
+
 
         <Route path='/dashboard_child' element={<DiabetesDashboard_Child/>}/>
         <Route path='/bloodsugarlogger' element={<BloodSugarLogger/>}/>
@@ -114,14 +122,16 @@ function App() {
 
           {/* قسم المعدل*/}
        
-        <Route path='/dashboardcoach' element={<DashboardCoach/>}/>
+        
         {/** <Route path="/coach/:coachId/patient/:patientId/view" element={<ViewPatientPage />} />
        <Route path="/coach/:coachId/patient/:patientId/edit" element={<EditPatientPage />} />
- */}
-       <Route path='/D' element={<FitTrackDashboard/>}/>
+ */}   
+      
+      <Route path='/CoachDashboard/:CoachID'element={<CoachDashboard/>}/>
+       <Route path='/ProfilePleaer' element={<FitTrackDashboard/>}/>
        <Route path='/q' element={<FitnessPlanner/>}/>
-       <Route path='/S' element={<SettingsContent/>}/>
-       <Route path='/c' element={<ChatApp/>}/>
+       <Route path='/Setting/:CoachID' element={<SettingsContent/>}/>
+       <Route path='/Chat/:CoachID' element={<ChatApp/>}/>
        <Route path='/chat/:id' element={<ChatApp/>}/>
 
 

@@ -1,47 +1,48 @@
 /* Sidebar Styles */
-.sidebar11 {
-    width: 320px;
-    background-color: #f0f2f5;
-    padding: 16px 24px;
-    display: flex;
-    flex-direction: column;
-    transition: width 0.3s ease;
-    min-height: 100vh;
+.sidebar1 {
+  width: 320px;
+  background-color: #f0f2f5;
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease;
 }
 
-.user-profile {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 32px;
+/* حالة التصغير */
+.sidebar1.collapsed {
+  width: 80px; /* فقط الأيقونات */
+  padding: 24px 12px;
 }
-
-.avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background-color: #dbdee5;
+.avatar-NU{
+  width: 40%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #666b87;
-  font-weight: 600;
+}
+.avatar-NU svg {
+  width: 75%;
+    height: 75%;
+    padding: 10px;
+}
+.avatar-NU img {
+  width: 75%;
+    height: 75%;
+    padding: 10px;
+}
+.user-info-NU{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+.user-info-NU h3{
   font-size: 18px;
 }
-
-.user-info h3 {
-  font-size: 18px;
-  font-weight: 600;
-  color: #121217;
-  margin: 0;
+/* إخفاء نصوص اليوزر لما تكون مصغرة */
+.sidebar1.collapsed .user-profile {
+  display: none;
 }
-
-.user-info p {
-  font-size: 14px;
-  color: #666b87;
-  margin: 0;
+.user-profile-NU{
+  display: flex;
+  width: 100%;
 }
-
 /* Navigation Styles */
 .nav-menu {
   flex: 1;
@@ -73,39 +74,42 @@
 }
 
 .nav-icon {
-  width: 20px;
-  height: 20px;
+  width: 20px !important;
+  height: 20px !important;
+  flex-shrink: 0; /* يمنعها من التصغير */
 }
 
-/* Logo Styles */
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 32px;
-}
-
-.logo-icon {
-  width: 32px;
-  height: 32px;
-  background-color: #3d59d9;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
-.logo-text {
-  font-weight: bold;
-  color: #3d59d9;
-  font-size: 20px;
+/* زر التلت شخطات */
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #666b87;
+  cursor: pointer;
+  margin-bottom: 16px;
+  align-self: flex-start;
+  width: 100%;
 }
 
 /* Responsive Sidebar */
 @media (max-width: 768px) {
-  .sidebar {
+  .sidebar1 {
     width: 100%;
     padding: 16px;
   }
+  .sidebar1.collapsed{
+    width: 80px;
+    padding: 24px 0px;
+}
+}
+@media (max-width: 467px) {
+  .sidebar1 {
+    width: 100%;
+    padding: 16px;
+  }
+  .sidebar1.collapsed{
+    width: 80px;
+    padding: 24px 0px;
+}
+
 }

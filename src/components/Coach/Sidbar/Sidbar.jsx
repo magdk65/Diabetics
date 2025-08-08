@@ -1,60 +1,97 @@
-// src/components/Sidebar.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
-  FiHome,
-  FiUsers,
-  FiCalendar,
-  FiBook,
-  FiSettings,
-  FiMessageSquare,
-  FiActivity,
-  FiUser,
-} from "react-icons/fi";
+  Home,
+  User,
+  Dumbbell, // أيقونة تمارين (lucide-react توفرها)
+  Mail,
+  Settings,
+  Menu,
+} from "lucide-react";
 import '../Sidbar/Sidbar.css'
-const navItems = [
-  { id: "home", label: "Home", icon: FiHome },
-  { id: "patients", label: "Patients", icon: FiUsers },
-  { id: "sessions", label: "Sessions", icon: FiCalendar },
-  { id: "resources", label: "Resources", icon: FiBook },
-  { id: "settings", label: "Settings", icon: FiSettings },
-  { id: "messages", label: "Messages", icon: FiMessageSquare },
-];
+import { Link, useLocation } from "react-router-dom";
 
-const Sidebar = ({ onItemClick }) => {
-  const [activeItem, setActiveItem] = useState("home");
+const Sidebar = ({ CoachID, onItemClick }) => {
+  const location = useLocation();
+  const [collapsed, setCollapsed] = useState(true);
+  const [doctorData, setDoctorData] = useState({
+    name: "",
+    specialty: "",
+    imageUrl: "",
+  });
 
-  const handleClick = (id) => {
-    setActiveItem(id);
-    if (onItemClick) onItemClick(id);
+  useEffect(() => {
+    async function fetchDoctorData() {
+      try {
+        const response = await fetch("/api/doctor-profile");
+        const data = await response.json();
+        setDoctorData({
+          name: data.name,
+          specialty: data.specialty,
+          imageUrl: data.imageUrl,
+        });
+      } catch (error) {
+        console.error("Error fetching doctor data:", error);
+      }
+    }
+    fetchDoctorData();
+  }, []);
+
+  const toggleSidebar = () => {
+    setCollapsed(!collapsed);
   };
 
-  return (
-    <div className="sidebar11">
-      {/* User Profile */}
-      <div className="user-profile">
-        <div className="avatar">
-          <FiUser className="avatar-icon" />
-        </div>
-        <div className="user-info">
-          <h3>Sarah</h3>
-          <p>Coach</p>
-        </div>
-      </div>
+  const doctorIdValue = CoachID || "123";
 
-      {/* Navigation */}
+const navItems = [
+  { id: "dashboard", label: "Dashboard", icon: Home, path: `/CoachDashboard/${CoachID}` },
+{ id: "patients", label: "Patients", icon: User, path: `/dashboardcoach/${CoachID}` },
+  { id: "exercises", label: "Exercises", icon: Dumbbell, path: `/q/${CoachID}` },
+  { id: "messages", label: "Messages", icon: Mail, path: `/Chat/${CoachID}` },
+  { id: "settings", label: "Settings", icon: Settings, path: `/Setting/${CoachID}` },
+];
+
+
+  return (
+    <div className={`sidebar1 ${collapsed ? "collapsed" : ""}`}>
+      <button className="menu-toggle" onClick={toggleSidebar}>
+        <Menu />
+      </button>
+
+      {!collapsed && (
+        <div className="user-profile-NU">
+          <div className="avatar-NU">
+            {doctorData.imageUrl ? (
+              <img
+                src={doctorData.imageUrl}
+                alt="Doctor Avatar"
+                className="avatar-img"
+              />
+            ) : (
+              <User className="avatar-icon" />
+            )}
+          </div>
+          <div className="user-info-NU">
+            <h3>{doctorData.name || "Loading..."}</h3>
+            <p>{doctorData.specialty || "..."}</p>
+          </div>
+        </div>
+      )}
+
       <nav className="nav-menu">
-        {navItems.map(({ id, label, icon: Icon }) => (
-          <div
+        {navItems.map(({ id, label, icon: Icon, path }) => (
+          <Link
             key={id}
-            className={`nav-item ${activeItem === id ? "active" : ""}`}
-            onClick={() => handleClick(id)}
+            to={path}
+            className={`nav-item ${location.pathname.startsWith(path) ? "active" : ""}`}
+            onClick={() => {
+              if (onItemClick) onItemClick(id);
+            }}
           >
             <Icon className="nav-icon" />
-            <span>{label}</span>
-          </div>
+            {!collapsed && <span>{label}</span>}
+          </Link>
         ))}
       </nav>
-
     </div>
   );
 };

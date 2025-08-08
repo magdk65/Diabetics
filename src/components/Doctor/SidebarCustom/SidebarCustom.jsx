@@ -1,63 +1,100 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
-  FiUsers,
-  FiCalendar,
-  FiMessageSquare,
-  FiSettings,
-  FiHelpCircle,
-} from "react-icons/fi";
+  Calendar,
+  FileText,
+  Home,
+  Mail,
+  Settings,
+  LogOut,
+  Menu,
+  User
+} from "lucide-react";
 import "../SidebarCustom/SidebarCustom.css";
+import { Link, useLocation } from "react-router-dom";
 
-const SidebarCustom = () => {
-  const [active, setActive] = useState("patients");
+const SidebarCustom = ({ DocID, onItemClick }) => {
+  const location = useLocation();
+  const [collapsed, setCollapsed] = useState(true);
+  const [doctorData, setDoctorData] = useState({
+    name: "",
+    specialty: "",
+    imageUrl: "",
+  });
 
-  const handleClick = (id) => {
-    setActive(id);
+  useEffect(() => {
+    async function fetchDoctorData() {
+      try {
+        const response = await fetch("/api/doctor-profile");
+        const data = await response.json();
+        setDoctorData({
+          name: data.name,
+          specialty: data.specialty,
+          imageUrl: data.imageUrl,
+        });
+      } catch (error) {
+        console.error("Error fetching doctor data:", error);
+      }
+    }
+    fetchDoctorData();
+  }, []);
+
+  const toggleSidebar = () => {
+    setCollapsed(!collapsed);
   };
 
-  return (
-    <div className="sidebar-custom">
-      <div className="sidebar-header-custom">
-        <h1 className="sidebar-title-custom">Dashboard</h1>
-        <p className="sidebar-subtitle-custom">Diabetes Specialist</p>
-      </div>
+  const doctorIdValue = DocID || "123";
 
-      <nav className="nav-menu-custom">
-        <button
-          className={`nav-button-custom ${active === "patients" ? "active-custom" : ""}`}
-          onClick={() => handleClick("patients")}
-        >
-          <FiUsers className="nav-icon-custom" />
-          Patients
-        </button>
-        <button
-          className={`nav-button-custom ${active === "appointments" ? "active-custom" : ""}`}
-          onClick={() => handleClick("appointments")}
-        >
-          <FiCalendar className="nav-icon-custom" />
-          Appointments
-        </button>
-        <button
-          className={`nav-button-custom ${active === "messages" ? "active-custom" : ""}`}
-          onClick={() => handleClick("messages")}
-        >
-          <FiMessageSquare className="nav-icon-custom" />
-          Messages
-        </button>
-        <button
-          className={`nav-button-custom ${active === "settings" ? "active-custom" : ""}`}
-          onClick={() => handleClick("settings")}
-        >
-          <FiSettings className="nav-icon-custom" />
-          Settings
-        </button>
-        <button
-          className={`nav-button-custom ${active === "support" ? "active-custom" : ""}`}
-          onClick={() => handleClick("support")}
-        >
-          <FiHelpCircle className="nav-icon-custom" />
-          Support
-        </button>
+const navItems = [
+  { id: "dashboard", label: "Dashboard", icon: Home, path: `/doctor/${doctorIdValue}/dashboard` },
+  { id: "documents", label: "Documents", icon: FileText, path: `/doctor/${doctorIdValue}/documents` },
+  { id: "patients", label: "Patients List", icon: User, path: `/doctor/${doctorIdValue}/patients` },  // <-- هنا أضفتها
+  { id: "appointments", label: "Appointments", icon: Calendar, path: `/doctor/${doctorIdValue}/appointments` },
+  { id: "messages", label: "Messages", icon: Mail, path: `/doctor/${doctorIdValue}/messages` },
+  { id: "settings", label: "Settings", icon: Settings, path: `/doctor/${doctorIdValue}/settings` },
+  { id: "logout", label: "Logout", icon: LogOut, path: `/login` },
+];
+
+
+  return (
+    <div className={`sidebar1 ${collapsed ? "collapsed" : ""}`}>
+      <button className="menu-toggle" onClick={toggleSidebar}>
+        <Menu />
+      </button>
+
+      {!collapsed && (
+        <div className="user-profile-NU">
+          <div className="avatar-NU">
+            {doctorData.imageUrl ? (
+              <img
+                src={doctorData.imageUrl}
+                alt="Doctor Avatar"
+                className="avatar-img"
+              />
+            ) : (
+              <User className="avatar-icon" />
+            )}
+          </div>
+          <div className="user-info-NU">
+            <h3>{doctorData.name || "Loading..."}</h3>
+            <p>{doctorData.specialty || "..."}</p>
+          </div>
+        </div>
+      )}
+
+      <nav className="nav-menu">
+        {navItems.map(({ id, label, icon: Icon, path }) => (
+          <Link
+            key={id}
+            to={path}
+            className={`nav-item ${location.pathname.startsWith(path) ? "active" : ""}`}
+            onClick={() => {
+              if (onItemClick) onItemClick(id);
+            }}
+          >
+            <Icon className="nav-icon" />
+            {!collapsed && <span>{label}</span>}
+          </Link>
+        ))}
       </nav>
     </div>
   );

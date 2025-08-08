@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Eye, Edit3 } from "lucide-react"; // icons
 import { Link } from "react-router-dom"; // استيراد Link
-import '../DashboardCoach/DashboardCoach.css'
-import Sidebar from "../Sidbar/Sidbar";
-
+import '../CoachDashboard/CoachDashboard.css'
 const DashboardCoach = () => {
   const [patients, setPatients] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -29,11 +27,10 @@ const DashboardCoach = () => {
   });
 
   // نفترض أن لديك id الكوتش
-  const coachId = 101;
+  const CoachId = 101;
 
   return (
     <div className="coach-dashboard-container">
-      <Sidebar/>
       <div className="coach-main-content">
         <h1 className="coach-page-title">Patients</h1>
 
@@ -99,7 +96,7 @@ const DashboardCoach = () => {
 
                       {/* Edit Exercise Plan */}
                       <Link
-                        to={`/coach/${coachId}/patient/${patient.id}/edit`}
+                        to={`/coach/${CoachId}/patient/${patient.id}/edit`}
                         className="coach-icon-btn"
                         title="Modify Exercise Plan"
                       >

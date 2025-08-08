@@ -107,19 +107,14 @@ const Overview = ({ overviewData }) => {
                 </span>
               </div>
             </div>
-             <ResponsiveContainer width="100%" height={200}>
-  <LineChart data={overviewData.stepsChartData}>
-    <XAxis 
-      dataKey="day"
-      angle={-45} 
-      textAnchor="end"
-      interval={4} // يعرض كل 4 أيام فقط لتفادي التزاحم
-    />
-    <YAxis />
-    <Tooltip />
-    <Line type="monotone" dataKey="steps" stroke="#82ca9d" strokeWidth={2} dot={false} />
-  </LineChart>
-</ResponsiveContainer>
+             <ResponsiveContainer width="100%" height={150}>
+            <LineChart data={overviewData.stepsChartData}>
+                <XAxis dataKey="day" />
+                <YAxis />
+                <Tooltip />
+                <Line type="monotone" dataKey="steps" stroke="#82ca9d" />
+            </LineChart>
+            </ResponsiveContainer>
 
           </div>
         </div>

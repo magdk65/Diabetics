@@ -4,7 +4,6 @@ const Medication = ({ medications }) => {
   return (
     <div>
       <h2>Medications</h2>
-      <button onClick={() => alert('Navigate to Add Medication page')}>Add Medication</button>
 
       <table className="table">
         <thead>
